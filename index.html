@@ -1,77 +1,456 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Название вашего проекта</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-        h1 { margin-bottom: 15px; color: #111; }
-        p { margin-bottom: 20px; font-size: 1.1rem; color: #555; }
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 */
-            height: 0;
-            overflow: hidden;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            background: #000;
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            border: 0;
-        }
-        .buttons { text-align: center; margin-top: 30px; }
-        .btn {
-            display: inline-block;
-            background-color: #0066cc;
-            color: white;
-            padding: 14px 28px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 1rem;
-            transition: background 0.2s;
-        }
-        .btn:hover { background-color: #0052a3; }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SPINALIS — Governed on-premise AI for regulated European organisations</title>
+<meta name="description" content="Customise small language models on your own hardware, air-gapped, and get the audit trail, lineage and EU AI Act Annex IV technical documentation from the same run.">
+<meta name="color-scheme" content="light dark">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SPINALIS — Compliance as an output of the engineering process">
+<meta property="og:description" content="Governed on-premise customisation of small language models for regulated European organisations.">
+<meta property="og:image" content="assets/og-image.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-    <div class="container">
-        <h1>Описание проекта</h1>
-        <p>Здесь напишите краткое описание вашего продукта, его ключевые функции и назначение.</p>
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="#top" aria-label="SPINALIS home">
+      <span class="mark" aria-hidden="true"></span>
+      <span class="wordmark">SPINALIS</span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#problem">Problem</a>
+      <a href="#platform">Platform</a>
+      <a href="#evidence">Evidence</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#team">Team</a>
+    </nav>
+    <a class="btn btn-small" href="#contact">Contact</a>
+  </div>
+</header>
 
-        <!-- Встроенное видео с YouTube -->
-        <div class="video-container">
-            <!-- Замените VIDEO_ID на ID вашего видео на YouTube -->
-            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-        </div>
+<main id="main">
 
-        <p>Загрузите последнюю версию системы и начните работу уже сегодня.</p>
-
-        <!-- Ссылка на скачивание -->
-        <div class="buttons">
-            <a href="https://github.com/ВАШ_ПОЛЬЗОВАТЕЛЬ/ВАШ_РЕПОЗИТОРИЙ/releases" class="btn">Скачать систему</a>
-        </div>
+<!-- ============================== HERO ============================== -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">On-premise&nbsp;· Air-gapped&nbsp;· EU AI Act</p>
+      <h1>Compliance as an output of the engineering process.</h1>
+      <p class="lead">SPINALIS lets regulated European organisations customise small language models on their own hardware&nbsp;— and produces the audit trail, lineage record and Annex&nbsp;IV technical documentation <em>from the same run</em>, instead of by hand afterwards.</p>
+      <div class="cta-row">
+        <a class="btn" href="#contact">Become a design partner</a>
+        <a class="btn btn-ghost" href="#evidence">See the evidence</a>
+      </div>
+      <p class="hero-meta">Data synthesis, training, execution-grounded evaluation, serving and export&nbsp;— one installation, no data egress.</p>
     </div>
 
+    <figure class="record" aria-label="Record of one validation run">
+      <figcaption class="record-head">
+        <span class="record-title">Build record</span>
+        <span class="record-sub">Customer-message triage · retail bank</span>
+      </figcaption>
+      <ol class="journal">
+        <li>
+          <span class="j-event">dataset.registered</span>
+          <span class="j-body">Banking77 — 13,083 real banking queries, 77 handling categories</span>
+        </li>
+        <li>
+          <span class="j-event">build.completed</span>
+          <span class="j-body">0.5B open-weight model · QLoRA · one desktop GPU under €2,000</span>
+        </li>
+        <li class="j-metric">
+          <span class="j-event">evaluation.completed</span>
+          <span class="j-body"><span class="j-label">Accuracy on unseen messages</span>
+            <span class="big-delta"><span class="from">12%</span><span class="arrow" aria-hidden="true">→</span><span class="to">94%</span></span></span>
+        </li>
+        <li class="j-artefact">
+          <span class="j-event">evidence.generated</span>
+          <span class="j-body">Audit trail · lineage record · Annex&nbsp;IV technical file</span>
+        </li>
+      </ol>
+      <p class="record-foot"><span>Hash-chained journal</span><span>Ed25519-anchored</span><span>No analyst effort</span></p>
+    </figure>
+  </div>
+</section>
+
+<!-- ============================== 01 PROBLEM ============================== -->
+<section class="section" id="problem">
+  <div class="wrap">
+    <p class="kicker"><span>01</span>The problem</p>
+    <h2>Not a training gap. Not an inference gap. <span class="accent">An evidence gap.</span></h2>
+    <div class="two-col">
+      <div class="prose">
+        <p>Open-weight models of one to eight billion parameters now run on a single GPU, and can be customised on private data without a cluster. The tools that do it are excellent. None of them produce the record a regulated organisation is legally obliged to hold.</p>
+        <p>Under Regulation (EU)&nbsp;2024/1689, an organisation that fine-tunes a model on its own data may itself become the <strong>provider</strong> of a high-risk AI system&nbsp;— and inherit the obligations of Chapter&nbsp;III.</p>
+        <p>Audit trails, lineage, reproducibility and enforced human sign-off are not features of a trainer. They are properties of a governed process. Today that documentation is written afterwards, by hand, about work that left no trace.</p>
+      </div>
+      <div class="obligations" role="group" aria-label="Chapter III obligations">
+        <p class="small-head">What a provider must be able to show</p>
+        <ul>
+          <li>Risk management</li>
+          <li>Data governance</li>
+          <li>Technical documentation <span class="ref">Annex IV</span></li>
+          <li>Record-keeping</li>
+          <li>Human oversight</li>
+          <li>Accuracy &amp; robustness</li>
+          <li>Post-market monitoring</li>
+          <li>Fundamental-rights impact assessment <span class="ref">Art. 27</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 02 WHY NOW ============================== -->
+<section class="section section-band" id="why-now">
+  <div class="wrap why-grid">
+    <div>
+      <p class="kicker"><span>02</span>Why now</p>
+      <p class="date-stamp">December 2027</p>
+      <p class="prose">Binding obligations for the high-risk systems listed in Annex&nbsp;III of the EU&nbsp;AI&nbsp;Act apply from December&nbsp;2027. Procurement in regulated organisations runs twelve to twenty-four months&nbsp;— the purchasing decisions are being made now.</p>
+    </div>
+    <div class="why-points">
+      <div class="point">
+        <h3>The data cannot leave</h3>
+        <p>Finance, insurance, defence and public administration are barred&nbsp;— by data-protection law, sectoral regulation, national security rules or internal classification&nbsp;— from sending proprietary or personal data to third-country cloud AI services.</p>
+      </div>
+      <div class="point">
+        <h3>A sovereign cloud is not the answer on its own</h3>
+        <p>EU sovereign-cloud offerings keep data inside the Union and may satisfy part of the financial sector. They do not enter an air-gapped network, they do not meet an absolute no-egress policy, and they do not produce the evidence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 03 PLATFORM ============================== -->
+<section class="section" id="platform">
+  <div class="wrap">
+    <p class="kicker"><span>03</span>The platform</p>
+    <h2>One installation. The whole lifecycle. Evidence as a by-product.</h2>
+    <p class="prose narrow">A single air-gapped installation runs every stage on the customer's own hardware. Each stage writes to the same append-only, hash-chained audit journal&nbsp;— so the conformity record is assembled by the work itself.</p>
+
+    <ol class="lifecycle">
+      <li><span class="stage">Ingest</span><span class="records">PII scan · dataset hash · quality analysis</span></li>
+      <li><span class="stage">Synthesise</span><span class="records">pairs kept only if round-trip execution agrees</span></li>
+      <li><span class="stage">Train</span><span class="records">LoRA / QLoRA · seed · environment manifest</span></li>
+      <li><span class="stage">Verify</span><span class="records">outputs executed against a governed snapshot</span></li>
+      <li><span class="stage">Sign off</span><span class="records">human approval gates production</span></li>
+      <li><span class="stage">Serve</span><span class="records">OpenAI-compatible · output guards</span></li>
+      <li><span class="stage">Monitor</span><span class="records">scheduled revalidation · drift alerts</span></li>
+    </ol>
+    <p class="chain-label">append-only · hash-chained · per-installation Ed25519 anchors</p>
+
+    <div class="pillars">
+      <article class="pillar">
+        <p class="small-head">Technical core</p>
+        <h3>Execution-grounded verification</h3>
+        <p>Model outputs are executed against a governed, versioned data snapshot and compared <strong>by result, not by textual similarity</strong>. Text metrics cannot tell correctness from resemblance; running the output settles it.</p>
+        <div class="sql-demo" role="group" aria-label="Illustration: text similarity versus execution">
+          <div class="sql-row">
+            <span class="sql-tag">reference</span>
+            <code>SELECT COUNT(*) FROM loans WHERE status = 'default'</code>
+          </div>
+          <div class="sql-row ok">
+            <span class="sql-tag">different text</span>
+            <code>SELECT COUNT(id) FROM loans WHERE status IN ('default')</code>
+            <span class="verdict">same result — correct</span>
+          </div>
+          <div class="sql-row bad">
+            <span class="sql-tag">near-identical</span>
+            <code>SELECT COUNT(*) FROM loans WHERE status = 'defaulted'</code>
+            <span class="verdict">different result — wrong</span>
+          </div>
+          <p class="sql-note">Illustrative; <code>id</code> is the primary key.</p>
+        </div>
+        <p>The same primitive is used three times: to <strong>measure</strong> model quality, to <strong>filter</strong> synthetic training data by round-trip execution, and to <strong>constrain</strong> what a deployed endpoint may return. One piece of audited infrastructure instead of three heuristics.</p>
+      </article>
+
+      <article class="pillar">
+        <p class="small-head">Technical core</p>
+        <h3>Cryptographic provenance</h3>
+        <p>Every action is written to an append-only, hash-chained audit journal with per-installation Ed25519 anchors: tampering is <strong>detectable</strong>, not merely prohibited.</p>
+        <p>Every build is pinned by random seed, dataset hash and environment manifest, so a result obtained today can be reconstructed and re-verified years later&nbsp;— the precondition for any conformity claim that survives scrutiny.</p>
+        <ol class="lineage">
+          <li>raw data</li><li>dataset</li><li>synthesis</li><li>curation</li><li>build</li><li>model</li><li>endpoint</li>
+        </ol>
+      </article>
+    </div>
+
+    <div class="generated">
+      <h3 class="small-head">Generated from the engineering record</h3>
+      <ul class="artefacts">
+        <li><strong>Annex IV technical documentation</strong> per build</li>
+        <li><strong>Article 27 impact assessment</strong></li>
+        <li><strong>Role-based access control</strong> with mandatory human sign-off before production</li>
+        <li><strong>PII detection and redaction</strong>, lineage-tracked</li>
+        <li><strong>Leak-safe dataset splitting</strong></li>
+        <li><strong>Scheduled re-evaluation</strong> with regression alerts&nbsp;— the post-market monitoring duty</li>
+        <li><strong>Base-model drift tracking</strong>, one-click retraining, head-to-head comparison</li>
+        <li><strong>Staging-to-production promotion</strong> with rollback</li>
+      </ul>
+      <p class="profile-packs"><strong>Regulator-agnostic by design.</strong> Swappable regulatory profile packs map the same record onto a specific output format. The EU&nbsp;AI&nbsp;Act is the first pack; ISO/IEC&nbsp;42001 and the NIST AI&nbsp;RMF are addressable through the same mechanism.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 04 EVIDENCE ============================== -->
+<section class="section section-band" id="evidence">
+  <div class="wrap">
+    <p class="kicker"><span>04</span>Evidence</p>
+    <h2>Validated end to end on representative regulated workloads.</h2>
+    <div class="cases">
+      <article class="case case-lead">
+        <p class="case-figure"><span>12%</span><span class="arrow" aria-hidden="true">→</span><span class="to">94%</span></p>
+        <h3>Customer-message triage for a retail bank</h3>
+        <p>Route an incoming customer message to one of 77 internal handling categories&nbsp;— a workload every retail bank runs, today manually or with brittle rules. On the public Banking77 benchmark (13,083 real banking queries, CC-BY-4.0), a 0.5-billion-parameter open model was customised on the platform with QLoRA. Accuracy on unseen messages rose from about 12% to about 94%, on hardware costing under €2,000.</p>
+        <p class="case-evidence">The audit trail, lineage record and Annex&nbsp;IV technical file for that model were produced by the same run, with no analyst effort.</p>
+      </article>
+      <article class="case">
+        <p class="case-figure small"><span class="to">138</span> <span class="unit">verified examples</span></p>
+        <h3>Natural-language querying of a proprietary database</h3>
+        <p>From 58 analytical queries mined from production logs&nbsp;— cleaned, scrubbed of personal data, and split so no query form appears in both training and test&nbsp;— the platform generated and verified a training set of 138 examples with a 12-example held-out set, end to end inside the perimeter. Every query executes successfully against a governed read-only snapshot.</p>
+      </article>
+      <article class="case">
+        <p class="case-figure small"><span class="to">0</span> <span class="unit">cloud labellers</span></p>
+        <h3>Training data without external dependency</h3>
+        <p>Training pairs are synthesised on the customer's own hardware by a locally hosted larger model, then filtered by round-trip execution: a generated question is turned back into a query, both are executed, and the pair is kept only if the results agree. Rejected pairs are retained as negatives for preference training.</p>
+      </article>
+    </div>
+    <p class="trl">Validated in a relevant environment&nbsp;— customer-class hardware, air-gapped, with separated roles, human sign-off before deployment and an immutable audit journal. <strong>All aspects of TRL&nbsp;5 are complete.</strong></p>
+  </div>
+</section>
+
+<!-- ============================== 05 ALTERNATIVES ============================== -->
+<section class="section" id="compare">
+  <div class="wrap">
+    <p class="kicker"><span>05</span>The alternatives</p>
+    <h2>Three ways to build a governed AI system today.</h2>
+    <div class="table-wrap">
+      <table class="compare">
+        <thead>
+          <tr><th scope="col"><span class="sr-only">Criterion</span></th><th scope="col">Cloud API customisation</th><th scope="col">Open-source tools, self-assembled</th><th scope="col" class="us">SPINALIS</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Data leaves the perimeter</th><td data-label="Cloud API customisation">Yes — legally excluded for this market</td><td data-label="Open-source tools, self-assembled">No</td><td class="us" data-label="SPINALIS">No</td></tr>
+          <tr><th scope="row">Time to a working, governed deployment</th><td data-label="Cloud API customisation">Days, but unavailable</td><td data-label="Open-source tools, self-assembled">Weeks of engineering, then permanent maintenance</td><td class="us" data-label="SPINALIS">Single installer, hours</td></tr>
+          <tr><th scope="row">Audit evidence</th><td data-label="Cloud API customisation">The vendor's, not the customer's</td><td data-label="Open-source tools, self-assembled">None — written by hand</td><td class="us" data-label="SPINALIS">Generated from execution, per build</td></tr>
+          <tr><th scope="row">Compliance effort per system, per year</th><td data-label="Cloud API customisation">n/a</td><td data-label="Open-source tools, self-assembled">14–28 specialist person-days</td><td class="us" data-label="SPINALIS">Minutes of machine time</td></tr>
+          <tr><th scope="row">Procurement viability</th><td data-label="Cloud API customisation">Blocked by data rules</td><td data-label="Open-source tools, self-assembled">Blocked by copyleft licensing</td><td class="us" data-label="SPINALIS">Proprietary, EU-domiciled vendor</td></tr>
+          <tr><th scope="row">Unit inference cost</th><td data-label="Cloud API customisation">Highest</td><td data-label="Open-source tools, self-assembled">Low</td><td class="us" data-label="SPINALIS">Low</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="economics">
+      <div class="econ">
+        <p class="small-head">Compliance cost — the dominant term</p>
+        <p class="econ-figure">€12,600–39,200 <span>per system, per year</span></p>
+        <p>Producing and maintaining the evidence for one high-risk system, refreshed at every retraining, takes an estimated 14–28 specialist person-days a year at European consultancy rates of €900–1,400 per day. SPINALIS generates the same artefacts from the engineering record in minutes of machine time.</p>
+      </div>
+      <div class="econ">
+        <p class="small-head">Inference cost — where cloud is permitted at all</p>
+        <p class="econ-figure">€0.08–0.27 <span>per million tokens, vs €2–12 for frontier APIs</span></p>
+        <p>A three-billion-parameter model on a €2,000 prosumer GPU costs about €840 a year to own and operate (hardware amortised over three years, plus 876&nbsp;kWh at €0.20/kWh for eight hours' daily load). At 300–1,000 tokens per second that is 3,150–10,500 million tokens a year. The assumptions are stated so the figure can be checked.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 06 PROCUREMENT & COMPETITION ============================== -->
+<section class="section section-band" id="procurement">
+  <div class="wrap">
+    <p class="kicker"><span>06</span>Built for procurement</p>
+    <h2>A vendor regulated procurement can say yes to.</h2>
+    <div class="facts">
+      <div class="fact">
+        <h3>Proprietary licence under EU law</h3>
+        <p>An end-user licence governed by Portuguese law. Entitlements enforced by signed licence files and machine fingerprinting&nbsp;— verifiable offline, because air-gapped deployment permits no telemetry.</p>
+      </div>
+      <div class="fact">
+        <h3>No copyleft in the stack</h3>
+        <p>The dependency stack is permissive only (Apache-2.0, MIT, BSD). Copyleft components are excluded by policy&nbsp;— including faster training kernels, whose speed is forgone deliberately so the product stays procurable.</p>
+      </div>
+      <div class="fact">
+        <h3>Nothing leaves the machine</h3>
+        <p>No outbound connection carries customer data. A single binary with an embedded web interface and a bundled Python runtime; installers for Windows, Linux and macOS (Apple Silicon); no cluster, no platform team.</p>
+      </div>
+      <div class="fact">
+        <h3>Evidence that accumulates</h3>
+        <p>The audit chain, lineage graph and revalidation history build up over years inside the customer's perimeter&nbsp;— and cannot be reconstructed by a successor tool.</p>
+      </div>
+    </div>
+
+    <h3 class="sub-h">Who else competes for this budget</h3>
+    <dl class="competitors">
+      <div class="comp comp-primary">
+        <dt>Building it internally <span class="tag">the primary competitor</span></dt>
+        <dd>A capable bank can assemble open-source training and serving tools in a fortnight. The governance layer&nbsp;— access control, enforced sign-off, tamper-evident audit, lineage, reproducible builds, generated technical files, scheduled revalidation&nbsp;— is several engineer-years, delivers no visible capability, and is the part that never gets built.</dd>
+      </div>
+      <div class="comp">
+        <dt>Open-source trainers and no-code studios <span class="eg">e.g. Unsloth Studio</span></dt>
+        <dd>Excellent and free; training throughput is conceded, not contested. No audit trail, lineage or conformity artefacts, no accountable vendor&nbsp;— and the Unsloth Studio UI is licensed AGPL-3.0, a copyleft licence procurement in regulated sectors rejects.</dd>
+      </div>
+      <div class="comp">
+        <dt>AI governance and GRC platforms</dt>
+        <dd>Closest in purpose. They collect policies, questionnaires and attestations <em>above</em> the engineering process; their output is still an assertion typed by a person. SPINALIS sits <em>inside</em> the process and derives the artefacts from execution. The two are compatible.</dd>
+      </div>
+      <div class="comp">
+        <dt>Cloud fine-tuning services</dt>
+        <dd>Technically strong, and excluded wherever data may not leave. Hyperscaler sovereign-cloud offerings in the Union may satisfy part of financial services; air-gapped defence and government, absolute no-egress policies and the evidence layer itself remain out of their reach.</dd>
+      </div>
+      <div class="comp">
+        <dt>Local inference runtimes</dt>
+        <dd>They solve serving, not customisation or governance&nbsp;— and are complementary: SPINALIS exports to open weight formats they can serve.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============================== 07 PRICING ============================== -->
+<section class="section" id="pricing">
+  <div class="wrap">
+    <p class="kicker"><span>07</span>Pricing</p>
+    <h2>Priced per governed AI system&nbsp;— not per GPU.</h2>
+    <p class="prose narrow">A governed AI system is one solution promoted into production under governance: one entry in the register of AI systems the organisation must maintain. GPU count measures computation, which is commoditised; the number of governed systems measures regulatory exposure. Versions, retraining and redundant replicas are not counted.</p>
+    <div class="tiers">
+      <article class="tier">
+        <h3>Community</h3>
+        <p class="price">€0 <span>per year</span></p>
+        <ul>
+          <li><span>Governed AI systems</span><strong>1</strong></li>
+          <li><span>Conformity artefacts</span><strong class="no">not included</strong></li>
+          <li><span>Organisation-wide access control</span><strong class="no">no</strong></li>
+          <li><span>Support</span><strong>community</strong></li>
+        </ul>
+        <p class="tier-note">Train, serve and export — evaluation without friction. Conformity artefacts start at Pro.</p>
+      </article>
+      <article class="tier">
+        <h3>Pro</h3>
+        <p class="price">€24,000 <span>per year</span></p>
+        <ul>
+          <li><span>Governed AI systems</span><strong>3</strong></li>
+          <li><span>Conformity artefacts</span><strong class="yes">included</strong></li>
+          <li><span>Organisation-wide access control</span><strong class="no">no</strong></li>
+          <li><span>Support</span><strong>2 business days</strong></li>
+        </ul>
+      </article>
+      <article class="tier">
+        <h3>Enterprise</h3>
+        <p class="price"><span class="from">from</span> €90,000 <span>per year</span></p>
+        <ul>
+          <li><span>Governed AI systems</span><strong>12</strong></li>
+          <li><span>Conformity artefacts</span><strong class="yes">included</strong></li>
+          <li><span>Organisation-wide access control</span><strong class="yes">yes</strong></li>
+          <li><span>Support</span><strong>8h SLA, named engineer</strong></li>
+        </ul>
+      </article>
+      <article class="tier">
+        <h3>Sovereign</h3>
+        <p class="price"><span class="from">from</span> €160,000 <span>per year</span></p>
+        <ul>
+          <li><span>Governed AI systems</span><strong>unlimited</strong></li>
+          <li><span>Conformity artefacts</span><strong class="yes">included</strong></li>
+          <li><span>Organisation-wide access control</span><strong class="yes">yes</strong></li>
+          <li><span>Support</span><strong>4h SLA, on-site</strong></li>
+        </ul>
+      </article>
+    </div>
+    <p class="pricing-foot">First engagements are fixed-price and fixed-scope: one governed model and its complete conformity dossier, delivered on the platform inside your perimeter.</p>
+  </div>
+</section>
+
+<!-- ============================== 08 MARKET ============================== -->
+<section class="section section-band" id="market">
+  <div class="wrap">
+    <p class="kicker"><span>08</span>Market</p>
+    <h2>Sized from the bottom up, on one verifiable segment.</h2>
+    <ol class="funnel">
+      <li><span class="f-num">4,633</span><span class="f-text">credit institutions in the European Union (European Central Bank, January 2026), joined by insurers supervised under Solvency&nbsp;II&nbsp;— about 6,000 in-scope financial institutions</span></li>
+      <li><span class="f-num">€270M</span><span class="f-text">annual recurring revenue at a blended contract value of €45,000&nbsp;— European financial services alone</span></li>
+      <li><span class="f-num">€54M</span><span class="f-text">serviceable: the estimated 20% that already operate on-premise GPU capacity with a mandate to customise models</span></li>
+      <li><span class="f-num">€7–11M</span><span class="f-text">ARR from 150–250 accounts over the five years following deployment</span></li>
+    </ol>
+    <p class="prose narrow">A deliberate lower bound. Not counted: defence and public administration in Europe, the regulated supply chains that inherit the same evidence duties through vendor due diligence, and North America, where model-risk supervision and the NIST AI&nbsp;RMF demand the same properties.</p>
+  </div>
+</section>
+
+<!-- ============================== 09 ROADMAP ============================== -->
+<section class="section" id="roadmap">
+  <div class="wrap">
+    <p class="kicker"><span>09</span>Plan</p>
+    <h2>The next 24 months.</h2>
+    <ol class="timeline">
+      <li><span class="m">M6</span><span class="t">Three design-partner deployments across finance, insurance, defence and government</span></li>
+      <li><span class="m">M10</span><span class="t">Signed and attested release chain in production — EV code signing, notarisation, SBOM</span></li>
+      <li><span class="m">M12</span><span class="t">ISO/IEC&nbsp;42001 and 27001 certification audit passed</span></li>
+      <li><span class="m">M14</span><span class="t">Regulatory profile-pack framework released — EU&nbsp;AI&nbsp;Act, ISO/IEC&nbsp;42001, NIST AI&nbsp;RMF</span></li>
+      <li><span class="m">M18</span><span class="t">Six deployments with accepted conformity dossiers</span></li>
+      <li><span class="m">M20</span><span class="t">Conformity dossier validated externally</span></li>
+      <li><span class="m">M24</span><span class="t">25 paying accounts</span></li>
+    </ol>
+    <p class="roadmap-note">Months from project start.</p>
+  </div>
+</section>
+
+<!-- ============================== 10 TEAM ============================== -->
+<section class="section section-band" id="team">
+  <div class="wrap">
+    <p class="kicker"><span>10</span>Team</p>
+    <h2>Two founders, two capabilities.</h2>
+    <p class="prose narrow team-lead">Building the technology&nbsp;— and selling it into regulated procurement. Clearly separated mandates; strategic decisions need both.</p>
+    <div class="founders">
+      <article class="founder">
+        <span class="monogram" aria-hidden="true">KK</span>
+        <div>
+          <h3>Konstantin Khrimpach</h3>
+          <p class="role">Co-founder · Chief Technology Officer</p>
+          <p>Senior machine-learning and MLOps engineer, and sole author of the delivered system: the Go control plane and API, the Python training and serving runtime, the web interface, the licensing and anti-tamper subsystem, and the complete governance layer. Previously built an ML platform serving around 400 data scientists and 3,000 production models in financial services at scale.</p>
+          <p class="owns">Owns product, architecture and engineering.</p>
+        </div>
+      </article>
+      <article class="founder">
+        <span class="monogram" aria-hidden="true">VF</span>
+        <div>
+          <h3>Vladimir Fedyanov, MBA</h3>
+          <p class="role">Co-founder · Chief Operating Officer</p>
+          <p>Fifteen years building and turning around technology and delivery organisations of up to 600 people, with portfolios above $30M a year. Recovered government and banking programmes; on the founding leadership team of an industrial IoT platform, delivered an on-premise manufacturing execution system at a major oil refinery. Ran enterprise presales and doubled presale-to-contract conversion; recruited around 500 people in two years and set up two engineering offices. Led a cyber-security function; AMBA-accredited MBA.</p>
+          <p class="owns">Owns commercial strategy, delivery, partnerships, operations and P&amp;L.</p>
+        </div>
+      </article>
+    </div>
+    <p class="funding">Self-funded: the entire system was built without institutional capital.</p>
+  </div>
+</section>
+
+<!-- ============================== CONTACT ============================== -->
+<section class="section contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <h2>Build a governed AI system inside your perimeter.</h2>
+      <p class="prose">We are selecting design partners in finance, insurance, defence and government for validation deployments in their operational environments.</p>
+    </div>
+    <div class="contact-card">
+      <p class="small-head">Contact</p>
+      <!-- REPLACE_BEFORE_PUBLISHING: set the real address in both places below (see README.md). -->
+      <a class="contact-mail" href="mailto:CONTACT_EMAIL">CONTACT_EMAIL</a>
+      <p class="contact-note">Briefings for CISOs, compliance officers and procurement teams.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <p><span class="mark mark-small" aria-hidden="true"></span> SPINALIS · Governed on-premise customisation of small language models</p>
+    <p class="footer-meta">EU trademark application for the SPINALIS mark in preparation · This site sets no cookies and makes no third-party requests · © 2026</p>
+  </div>
+</footer>
 </body>
 </html>
