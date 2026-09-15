@@ -2,13 +2,17 @@
 
 A single static page for GitHub Pages: `index.html` + `assets/`. No build step, no JavaScript,
 no external fonts, no trackers — the page makes no third-party requests, which is the least a
-data-sovereignty product's site should do.
+data-sovereignty product's site should do. Screens in `assets/screens/` are WebP captures of the
+running product (≈520 KB in total).
 
 ## Before publishing
 
-1. **Contact address.** Replace `CONTACT_EMAIL` in `index.html` — it appears twice, in the `href`
-   and in the link text (search for `REPLACE_BEFORE_PUBLISHING`).
-2. **Custom domain (optional).** Add a file named `CNAME` containing the domain, e.g. `spinalis.eu`.
+1. **Contact address.** `CONTACT_EMAIL` appears 11 times in `index.html` (header, calls to action,
+   contact block; several carry a pre-filled `?subject=`). Replace all of them at once:
+   `sed -i 's/CONTACT_EMAIL/hello@your-domain.eu/g' gitpages/index.html`
+2. **Social preview (optional).** `og:image` is relative; most link scrapers need an absolute URL —
+   set it once the domain is known.
+3. **Custom domain (optional).** Add a file named `CNAME` containing the domain, e.g. `spinalis.eu`.
 
 ## Preview locally
 
@@ -61,12 +65,30 @@ deck. Keep them in step: if Part B changes, change this page.
 | Execution-grounded verification, cryptographic provenance, generated artefacts, profile packs | 1 — Novelty |
 | Three-option comparison, compliance and inference cost (with assumptions) | 1 — Why this is better |
 | Banking77 12% → 94%, NL-to-SQL 138/12, synthesis without egress, TRL 5 | 1 — Empirical demonstration, TRL |
+| Retinal photographs 91.7%, dental X-rays 80.7% | not in Part B — see below |
 | Proprietary licence, permissive-only stack | 1 — IP protection and strategy |
 | December 2027, 4,633 → €270M → €54M → €7–11M | 2 — Market opportunity and sizing |
 | Tiers per governed AI system | 2 — Business and revenue model |
 | Five competitor categories, sovereign-cloud risk | 2 — Competition and its limits |
 | M6–M24 milestones | 3 — Implementation plan |
 | Founders | 3 — Team capability |
+
+### Demonstrations run on the platform (not in Part B)
+
+Numbers are copied from each build's own `evaluate/eval_results.json` on the development machine.
+
+| Demo | Build | Held-out set | Result |
+|---|---|---|---|
+| Retinal photographs, 4 classes (public Kaggle archive, licence unknown) | `8fea9937` | 420 images, split by source image (`group_pattern ^_?(\d+)_(?:left\|right\|\d+)$`) | accuracy 91.7%, macro-F1 91.3%, ROC-AUC 0.989 |
+| Same data, first split (patient number only) | `a48ca215` | 421 images | accuracy 93.3% — inflated by differently named copies of the same photograph |
+| Dental X-ray findings (DENTEX, CC BY-NC-SA 4.0) | `b4cd89a6` | 523 crops from 102 X-rays never in training | accuracy 80.7%, macro-F1 69.3%; identical confusion matrix to build `0874571b` |
+
+Near-duplicate check (DINOv2-small, cosine ≥ 0.98, held-out vs training): first fundus split 24
+images, corrected split 4 (none sharing a source number), dental 0.
+
+Patient images are blurred in every screen; DENTEX images are never shown (non-commercial licence).
+The text-to-SQL database is synthetic, modelled on a real coffee roaster; its query log was
+generated, so the page says "query log", never "production logs".
 
 Two facts come from outside Part B and were checked:
 
@@ -88,4 +110,7 @@ These were errors or contradictions in the earlier deck. Do not reintroduce them
 - unsourced statistics (CIO surveys, "stalled initiatives", inference bills, MLOps timelines);
 - "no co-founder needed" and an Enterprise AE hire (the COO covers that);
 - Together.ai / Predibase / Axolotl / Ludwig as the competitor set, and non-governance comparison axes;
-- employer names from the founders' past, and regional labels that invite the wrong association.
+- employer names from the founders' past, and regional labels that invite the wrong association;
+- "mined from production logs" for the SQL demo (the log is generated);
+- the first fundus split's 93.3% as a result (it leaked; the corrected split is the number);
+- training loss, learning rate or speed cards in screenshots, and the build's `-dirty` version string.

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SPINALIS — Governed on-premise AI for regulated European organisations</title>
-<meta name="description" content="Customise small language models on your own hardware, air-gapped, and get the audit trail, lineage and EU AI Act Annex IV technical documentation from the same run.">
+<meta name="description" content="Customise language and vision models on your own hardware, air-gapped, and get the audit trail, lineage and EU AI Act Annex IV technical documentation from the same run.">
 <meta name="color-scheme" content="light dark">
 <meta property="og:type" content="website">
 <meta property="og:title" content="SPINALIS — Compliance as an output of the engineering process">
-<meta property="og:description" content="Governed on-premise customisation of small language models for regulated European organisations.">
+<meta property="og:description" content="Governed on-premise customisation of AI models for regulated European organisations. Four workloads validated end to end.">
 <meta property="og:image" content="assets/og-image.png">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -24,13 +24,15 @@
       <span class="wordmark">SPINALIS</span>
     </a>
     <nav class="nav" aria-label="Sections">
-      <a href="#problem">Problem</a>
+      <a href="#how">How it works</a>
+      <a href="#evidence">Proof</a>
       <a href="#platform">Platform</a>
-      <a href="#evidence">Evidence</a>
+      <a href="#partners">Design partners</a>
       <a href="#pricing">Pricing</a>
-      <a href="#team">Team</a>
+      <a href="#faq">FAQ</a>
     </nav>
-    <a class="btn btn-small" href="#contact">Contact</a>
+    <!-- REPLACE_BEFORE_PUBLISHING: every k.khrimpach@gmail.com on this page (see README.md). -->
+    <a class="btn btn-small" href="mailto:k.khrimpach@gmail.com?subject=Briefing%20request">Book a briefing</a>
   </div>
 </header>
 
@@ -42,40 +44,69 @@
     <div class="hero-copy">
       <p class="eyebrow">On-premise&nbsp;· Air-gapped&nbsp;· EU AI Act</p>
       <h1>Compliance as an output of the engineering process.</h1>
-      <p class="lead">SPINALIS lets regulated European organisations customise small language models on their own hardware&nbsp;— and produces the audit trail, lineage record and Annex&nbsp;IV technical documentation <em>from the same run</em>, instead of by hand afterwards.</p>
+      <p class="lead">SPINALIS lets regulated European organisations customise language and vision models on their own hardware&nbsp;— and produces the audit trail, lineage record and Annex&nbsp;IV technical documentation <em>from the same run</em>, instead of by hand afterwards.</p>
       <div class="cta-row">
-        <a class="btn" href="#contact">Become a design partner</a>
-        <a class="btn btn-ghost" href="#evidence">See the evidence</a>
+        <a class="btn btn-accent" href="#partners">Become a design partner <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="#how">See one real run</a>
       </div>
-      <p class="hero-meta">Data synthesis, training, execution-grounded evaluation, serving and export&nbsp;— one installation, no data egress.</p>
+      <ul class="hero-points">
+        <li>Nothing leaves your network</li>
+        <li>One desktop GPU is enough</li>
+        <li>Annex&nbsp;IV file for every model</li>
+      </ul>
     </div>
 
-    <figure class="record" aria-label="Record of one validation run">
+    <figure class="record" aria-label="Audit journal entries for this build">
       <figcaption class="record-head">
-        <span class="record-title">Build record</span>
-        <span class="record-sub">Customer-message triage · retail bank</span>
+        <span class="record-title">Audit journal</span>
+        <span class="record-sub">Fundus screening · build 8fea9937</span>
       </figcaption>
       <ol class="journal">
-        <li>
-          <span class="j-event">dataset.registered</span>
-          <span class="j-body">Banking77 — 13,083 real banking queries, 77 handling categories</span>
-        </li>
-        <li>
-          <span class="j-event">build.completed</span>
-          <span class="j-body">0.5B open-weight model · QLoRA · one desktop GPU under €2,000</span>
-        </li>
-        <li class="j-metric">
-          <span class="j-event">evaluation.completed</span>
-          <span class="j-body"><span class="j-label">Accuracy on unseen messages</span>
-            <span class="big-delta"><span class="from">12%</span><span class="arrow" aria-hidden="true">→</span><span class="to">94%</span></span></span>
-        </li>
-        <li class="j-artefact">
-          <span class="j-event">evidence.generated</span>
-          <span class="j-body">Audit trail · lineage record · Annex&nbsp;IV technical file</span>
-        </li>
+        <li><span class="j-event">dataset.created</span><span class="j-body">4,217 retinal photographs · split by source image</span></li>
+        <li><span class="j-event">build.completed</span><span class="j-body">Vision transformer fine-tuned on one 16&nbsp;GB desktop GPU</span></li>
+        <li class="j-metric"><span class="j-event">build.evaluated</span><span class="j-body"><span class="j-label">Accuracy on patients it never saw</span><strong>91.7%</strong></span></li>
+        <li class="j-artefact"><span class="j-event">techdoc.generated</span><span class="j-body">Annex&nbsp;IV technical file</span></li>
       </ol>
-      <p class="record-foot"><span>Hash-chained journal</span><span>Ed25519-anchored</span><span>No analyst effort</span></p>
+      <p class="record-foot"><span>Hash-chained</span><span>Ed25519-anchored</span><span>No analyst effort</span></p>
     </figure>
+  </div>
+  <div class="wrap hero-shot">
+    <figure class="window">
+      <figcaption class="window-bar"><span>Fundus screening&nbsp;/ Builds&nbsp;/ 8fea9937</span></figcaption>
+      <a href="assets/screens/hero.webp"><img src="assets/screens/hero.webp" width="1600" height="748" alt="Classification report of a retinal-photograph model evaluated on 420 images from patients it never saw: accuracy 91.7%, ROC-AUC 0.989, a confusion matrix, and precision, recall and F1 per condition." fetchpriority="high"></a>
+    </figure>
+  </div>
+</section>
+
+<!-- ============================== PROOF STRIP ============================== -->
+<section class="proof" aria-labelledby="proof-title">
+  <div class="wrap">
+    <div class="proof-head">
+      <p class="small-head" id="proof-title">Four workloads, run end to end on the platform</p>
+      <a href="#evidence">What each number means&nbsp;→</a>
+    </div>
+    <ul class="proof-grid">
+      <li>
+        <span class="p-domain">Retail bank · message triage</span>
+        <span class="p-num"><span class="from">12%</span><span class="arrow" aria-hidden="true">→</span>94%</span>
+        <a class="p-what" href="#demo-bank">accuracy routing unseen customer messages to 77 categories</a>
+      </li>
+      <li>
+        <span class="p-domain">Ophthalmology · 4 conditions</span>
+        <span class="p-num">91.7%</span>
+        <a class="p-what" href="#demo-fundus">accuracy on patients never seen in training, leak-checked</a>
+      </li>
+      <li>
+        <span class="p-domain">Dental X-rays · 4 findings</span>
+        <span class="p-num">80.7%</span>
+        <a class="p-what" href="#demo-dental">accuracy on 102 unseen X-rays&nbsp;— weakest class shown, not hidden</a>
+      </li>
+      <li>
+        <span class="p-domain">Analytics · text-to-SQL</span>
+        <span class="p-num">138</span>
+        <a class="p-what" href="#demo-sql">training pairs, every one executed against the database</a>
+      </li>
+    </ul>
   </div>
 </section>
 
@@ -86,7 +117,7 @@
     <h2>Not a training gap. Not an inference gap. <span class="accent">An evidence gap.</span></h2>
     <div class="two-col">
       <div class="prose">
-        <p>Open-weight models of one to eight billion parameters now run on a single GPU, and can be customised on private data without a cluster. The tools that do it are excellent. None of them produce the record a regulated organisation is legally obliged to hold.</p>
+        <p>Open-weight models now run on a single GPU, and can be customised on private data without a cluster. The tools that do it are excellent. None of them produce the record a regulated organisation is legally obliged to hold.</p>
         <p>Under Regulation (EU)&nbsp;2024/1689, an organisation that fine-tunes a model on its own data may itself become the <strong>provider</strong> of a high-risk AI system&nbsp;— and inherit the obligations of Chapter&nbsp;III.</p>
         <p>Audit trails, lineage, reproducibility and enforced human sign-off are not features of a trainer. They are properties of a governed process. Today that documentation is written afterwards, by hand, about work that left no trace.</p>
       </div>
@@ -128,18 +159,225 @@
   </div>
 </section>
 
-<!-- ============================== 03 PLATFORM ============================== -->
+<!-- ============================== 03 HOW IT WORKS ============================== -->
+<section class="section" id="how">
+  <div class="wrap">
+    <p class="kicker"><span>03</span>How it works</p>
+    <h2>One real run, screen by screen.</h2>
+    <p class="prose narrow section-lead">Every screen below is the product itself, captured on one desktop GPU while building a retinal-photograph triage model from a public research archive. Patient images are blurred on this page.</p>
+
+    <ol class="steps">
+      <li class="step">
+        <div class="step-copy">
+          <h3>Drop in the material as it is.</h3>
+          <p>An archive of 4,217 retinal photographs goes in without a manifest or a script. SPINALIS catalogues every file, recognises the folder-per-condition layout, and offers the preparation that fits.</p>
+          <p>Then it asks the question that decides whether any later metric can be trusted: <strong>which images come from the same source</strong>, so they never end up on both sides of the evaluation.</p>
+          <ul class="step-facts">
+            <li><b>recognised</b> images in directories named after their class · 90% confident</li>
+            <li><b>group key</b> read from the file name, no code</li>
+          </ul>
+        </div>
+        <figure class="window">
+          <figcaption class="window-bar"><span>Fundus screening&nbsp;/ Datasets&nbsp;/ Retinal photographs</span></figcaption>
+          <a href="assets/screens/ingest.webp"><img src="assets/screens/ingest.webp" width="1400" height="1361" alt="A container dataset marked 'Not recognized yet' with the hypothesis 'Images organized in directories named after their class', 90% confident, and preparation options for a group field and a group pattern." loading="lazy" decoding="async"></a>
+        </figure>
+      </li>
+
+      <li class="step">
+        <div class="step-copy">
+          <h3>It finds the leak before the metric does.</h3>
+          <p>Before any training, a bundled image encoder compares every picture with every other. On the first split it flagged <strong>49 near-identical pairs</strong> that the patient number in the file name had not grouped together&nbsp;— differently named copies of the same photograph, free to land in training and in evaluation at once.</p>
+          <p>One change to the grouping rule, one re-split: the held-out set now shares no patient or image number with training, and held-out images with a near-identical match in training fell from 24 to&nbsp;4.</p>
+          <p class="callout"><strong>What the leak was worth.</strong> Accuracy on the first split, and on the corrected one:<span class="before-after"><span class="was">93.3%</span><span aria-hidden="true">→</span><span class="is">91.7%</span></span>The lower number is the one a regulator can rely on.</p>
+        </div>
+        <figure class="window">
+          <figcaption class="window-bar"><span>Fundus screening&nbsp;/ Datasets&nbsp;/ Insights</span></figcaption>
+          <a href="assets/screens/leak.webp"><img src="assets/screens/leak.webp" width="1400" height="820" alt="Insights tab: 49 near-identical pairs across different groups, with the warning that a split cannot keep them together, and one pair that looks the same but is labelled differently." loading="lazy" decoding="async"></a>
+        </figure>
+      </li>
+
+      <li class="step">
+        <div class="step-copy">
+          <h3>Evaluated on patients it has never seen.</h3>
+          <p>Training and evaluation run as one build on your GPU. The report leads with what a reviewer needs: accuracy, macro-averaged recall, precision and F1, ROC-AUC, and the full confusion matrix&nbsp;— so the classes the model confuses are visible, not averaged away.</p>
+          <ul class="step-facts">
+            <li><b>91.7%</b> accuracy on 420 held-out images</li>
+            <li><b>0.989</b> ROC-AUC · macro-F1 91.3%</li>
+            <li><b>pinned</b> seed, dataset hash, environment manifest</li>
+          </ul>
+        </div>
+        <figure class="window">
+          <figcaption class="window-bar"><span>Fundus screening&nbsp;/ Builds&nbsp;/ 8fea9937</span></figcaption>
+          <a href="assets/screens/report.webp"><img src="assets/screens/report.webp" width="1400" height="674" alt="Classification report with accuracy, macro recall, precision, F1, ROC-AUC and PR-AUC, and a confusion matrix across cataract, diabetic retinopathy, glaucoma and normal." loading="lazy" decoding="async"></a>
+        </figure>
+      </li>
+
+      <li class="step">
+        <div class="step-copy">
+          <h3>Nothing reaches production without a named approver.</h3>
+          <p>The model is packaged as a solution and <strong>deployment stays blocked</strong> until a person with the right role approves it. Separation of duties is enforced by the platform, not by a policy document.</p>
+          <p>The Annex&nbsp;IV technical file is generated from the build record. People write only what a machine cannot know&nbsp;— intended purpose, known limitations, risks&nbsp;— and every edit is journalled.</p>
+        </div>
+        <figure class="window">
+          <figcaption class="window-bar"><span>Fundus screening&nbsp;/ Solutions</span></figcaption>
+          <a href="assets/screens/signoff.webp"><img src="assets/screens/signoff.webp" width="1400" height="845" alt="Solution page: awaiting review, deployment is blocked until approved, with approve and reject actions and the Annex IV technical documentation panel offering Markdown and PDF." loading="lazy" decoding="async"></a>
+        </figure>
+      </li>
+
+      <li class="step">
+        <div class="step-copy">
+          <h3>Every artefact traces back to its inputs.</h3>
+          <p>Lineage is derived from what actually happened: which archive a dataset was prepared from, which datasets a build trained and was evaluated on, which base model it fine-tuned, which solution packages it. Ask where a model came from and the answer is a graph, not an interview.</p>
+        </div>
+        <figure class="window">
+          <figcaption class="window-bar"><span>Fundus screening&nbsp;/ Lineage</span></figcaption>
+          <a href="assets/screens/lineage.webp"><img src="assets/screens/lineage.webp" width="1400" height="1063" alt="Lineage page listing base model, datasets, build, fine-tuned model and solution, with relationships such as derived from, trained on, evaluated on, fine-tune of and packages." loading="lazy" decoding="async"></a>
+        </figure>
+      </li>
+
+      <li class="step">
+        <div class="step-copy">
+          <h3>Every action lands in a tamper-evident journal.</h3>
+          <p>Uploads, builds, evaluations, approvals, deployments and document edits are appended to a hash-chained journal with per-installation Ed25519 anchors. One click verifies the chain; an auditor exports it as CSV.</p>
+          <ul class="step-facts">
+            <li><b>append-only</b> no update, no delete</li>
+            <li><b>separate role</b> auditors read, never write</li>
+          </ul>
+        </div>
+        <figure class="window">
+          <figcaption class="window-bar"><span>Audit</span></figcaption>
+          <a href="assets/screens/audit.webp"><img src="assets/screens/audit.webp" width="1400" height="796" alt="Audit log: an append-only, hash-chained record of compliance-relevant actions with actor, role, action and subject, and a verify-chain control." loading="lazy" decoding="async"></a>
+        </figure>
+      </li>
+    </ol>
+
+    <div class="cta-band">
+      <div>
+        <h3>See the technical file this run produced.</h3>
+        <p>We will send the generated Annex&nbsp;IV document for this model, or walk your compliance and security teams through the run live.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-accent" href="mailto:k.khrimpach@gmail.com?subject=Sample%20Annex%20IV%20technical%20file">Request the sample file</a>
+        <a class="btn btn-ghost" href="mailto:k.khrimpach@gmail.com?subject=Live%20walkthrough">Book a live walkthrough</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 04 EVIDENCE ============================== -->
+<section class="section section-band" id="evidence">
+  <div class="wrap">
+    <p class="kicker"><span>04</span>Proof</p>
+    <h2>Four workloads. Every number with its fine print.</h2>
+    <p class="prose narrow section-lead">A regulator, an auditor or your own risk function will ask what a figure means before they ask how high it is. So each one comes with the answer.</p>
+
+    <div class="demos">
+      <article class="demo" id="demo-bank">
+        <div class="demo-shot"><a href="assets/screens/bank.webp"><img src="assets/screens/bank.webp" width="1200" height="600" alt="Insights on the customer-message training set: topics, ten pairs of messages that mean the same thing, and messages unlike anything else." loading="lazy" decoding="async"></a></div>
+        <div class="demo-body">
+          <p class="demo-domain">Retail banking</p>
+          <p class="demo-figure"><span class="from">12%</span><span class="arrow" aria-hidden="true">→</span><span class="n">94%</span><span class="unit">accuracy on unseen messages</span></p>
+          <h3>Customer-message triage</h3>
+          <p>Route an incoming customer message to one of 77 internal handling categories&nbsp;— a workload every retail bank runs, today manually or with brittle rules. A 0.5-billion-parameter open model was customised on the platform with QLoRA, on hardware costing under €2,000.</p>
+          <div class="means">
+            <p class="small-head">What the number means</p>
+            <ul>
+              <li>Public Banking77 benchmark: 13,083 real banking queries, CC-BY-4.0</li>
+              <li>12% is the same model before customisation, on the same messages</li>
+            </ul>
+          </div>
+          <p class="demo-evidence">Audit trail, lineage record and Annex&nbsp;IV file produced by the same run, with no analyst effort.</p>
+        </div>
+      </article>
+
+      <article class="demo" id="demo-fundus">
+        <div class="demo-shot"><a href="assets/screens/report.webp"><img src="assets/screens/fundus.webp" width="1200" height="600" alt="Classification report of the retinal-photograph model." loading="lazy" decoding="async"></a></div>
+        <div class="demo-body">
+          <p class="demo-domain">Ophthalmology · research data</p>
+          <p class="demo-figure"><span class="n">91.7%</span><span class="unit">accuracy on unseen patients</span></p>
+          <h3>Retinal-photograph triage</h3>
+          <p>Sort a fundus photograph into cataract, diabetic retinopathy, glaucoma or normal, to prioritise review by an ophthalmologist. A vision transformer fine-tuned on 3,797 images, evaluated on 420 it never saw.</p>
+          <p class="small-head bars-head">F1 per condition, held-out set</p>
+          <ul class="bars">
+            <li><span>Diabetic retinopathy</span><span class="track"><span class="fill w996"></span></span><b>99.6%</b></li>
+            <li><span>Cataract</span><span class="track"><span class="fill w903"></span></span><b>90.3%</b></li>
+            <li><span>Normal</span><span class="track"><span class="fill w895"></span></span><b>89.5%</b></li>
+            <li><span>Glaucoma</span><span class="track"><span class="fill w857"></span></span><b>85.7%</b></li>
+          </ul>
+          <div class="means">
+            <p class="small-head">What the number means</p>
+            <ul>
+              <li>Split by source image: no patient or image number on both sides; held-out images with a near-identical match in training fell from 24 to 4 after the re-split, and none of the four shares a source number</li>
+              <li>ROC-AUC 0.989, macro-F1 91.3%; weakest class glaucoma at F1 85.7%</li>
+              <li>Most frequent error: normal read as glaucoma, 10 of 113 cases</li>
+              <li>Public research dataset of unknown clinical provenance; its images are blurred here</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="demo" id="demo-dental">
+        <div class="demo-shot"><a href="assets/screens/dental.webp"><img src="assets/screens/dental.webp" width="1200" height="600" alt="Classification report of the dental X-ray model: accuracy 80.7%, macro recall 69.9%, macro precision 69.0%, macro F1 69.3%, ROC-AUC 0.910, with a confusion matrix." loading="lazy" decoding="async"></a></div>
+        <div class="demo-body">
+          <p class="demo-domain">Dental radiology · research data</p>
+          <p class="demo-figure"><span class="n">80.7%</span><span class="unit">accuracy on unseen X-rays</span></p>
+          <h3>Findings on panoramic X-rays</h3>
+          <p>Classify a tooth region as caries, deep caries, impacted tooth or periapical lesion. Trained on 3,006 crops from 576 X-rays; evaluated on 523 crops from 102 X-rays that were never in training.</p>
+          <p class="small-head bars-head">F1 per finding, held-out set</p>
+          <ul class="bars">
+            <li><span>Impacted tooth</span><span class="track"><span class="fill w938"></span></span><b>93.8%</b></li>
+            <li><span>Caries</span><span class="track"><span class="fill w863"></span></span><b>86.3%</b></li>
+            <li class="weak"><span>Deep caries</span><span class="track"><span class="fill w497"></span></span><b>49.7%</b></li>
+            <li class="weak"><span>Periapical lesion</span><span class="track"><span class="fill w473"></span></span><b>47.3%</b></li>
+          </ul>
+          <div class="means">
+            <p class="small-head">What the number means</p>
+            <ul>
+              <li>An average hides the two weak findings; the report does not&nbsp;— macro-F1 is 69.3%</li>
+              <li>Two independent builds, twelve days apart, produced the <strong>identical</strong> confusion matrix: seed, data and environment are pinned</li>
+              <li>DENTEX research dataset (non-commercial licence); its images are not shown here</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="demo" id="demo-sql">
+        <div class="demo-shot"><a href="assets/screens/sql.webp"><img src="assets/screens/sql.webp" width="1200" height="600" alt="Recipes page with image classification, object detection and text-to-SQL recipes; the text-to-SQL recipe synthesises question-query pairs with an execution round-trip filter and selects the checkpoint by execution accuracy." loading="lazy" decoding="async"></a></div>
+        <div class="demo-body">
+          <p class="demo-domain">Analytics · proprietary database</p>
+          <p class="demo-figure"><span class="n">138</span><span class="unit">execution-verified training pairs</span></p>
+          <h3>Plain-language questions over a business database</h3>
+          <p>Business users ask questions in English; the model answers with SQL over the point-of-sale and e-commerce database of a coffee roaster. From 58 analytical queries in the database's query log, the platform built a training set of 138 question-and-query pairs and a 12-question held-out set, end to end inside the perimeter.</p>
+          <div class="means">
+            <p class="small-head">What the number means</p>
+            <ul>
+              <li>Every query executes successfully against a governed read-only snapshot</li>
+              <li>Split by query: no query form appears in both training and test</li>
+              <li>Synthetic pairs are kept only if round-trip execution agrees; rejected pairs are retained as negatives</li>
+              <li>The database is synthetic, modelled on a real business</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <p class="trl">Validated in a relevant environment&nbsp;— customer-class hardware, air-gapped, with separated roles, human sign-off before deployment and an immutable audit journal. <strong>All aspects of TRL&nbsp;5 are complete.</strong></p>
+    <p class="data-note">Medical demonstrations use public research datasets to show the process; they are not medical devices and make no clinical claim.</p>
+  </div>
+</section>
+
+<!-- ============================== 05 PLATFORM ============================== -->
 <section class="section" id="platform">
   <div class="wrap">
-    <p class="kicker"><span>03</span>The platform</p>
+    <p class="kicker"><span>05</span>The platform</p>
     <h2>One installation. The whole lifecycle. Evidence as a by-product.</h2>
     <p class="prose narrow">A single air-gapped installation runs every stage on the customer's own hardware. Each stage writes to the same append-only, hash-chained audit journal&nbsp;— so the conformity record is assembled by the work itself.</p>
 
     <ol class="lifecycle">
-      <li><span class="stage">Ingest</span><span class="records">PII scan · dataset hash · quality analysis</span></li>
+      <li><span class="stage">Ingest</span><span class="records">shape recognised · PII scan · leak check</span></li>
       <li><span class="stage">Synthesise</span><span class="records">pairs kept only if round-trip execution agrees</span></li>
       <li><span class="stage">Train</span><span class="records">LoRA / QLoRA · seed · environment manifest</span></li>
-      <li><span class="stage">Verify</span><span class="records">outputs executed against a governed snapshot</span></li>
+      <li><span class="stage">Verify</span><span class="records">held-out data · outputs executed on a snapshot</span></li>
       <li><span class="stage">Sign off</span><span class="records">human approval gates production</span></li>
       <li><span class="stage">Serve</span><span class="records">OpenAI-compatible · output guards</span></li>
       <li><span class="stage">Monitor</span><span class="records">scheduled revalidation · drift alerts</span></li>
@@ -185,11 +423,11 @@
     <div class="generated">
       <h3 class="small-head">Generated from the engineering record</h3>
       <ul class="artefacts">
-        <li><strong>Annex IV technical documentation</strong> per build</li>
+        <li><strong>Annex IV technical documentation</strong> per solution, Markdown and PDF</li>
         <li><strong>Article 27 impact assessment</strong></li>
         <li><strong>Role-based access control</strong> with mandatory human sign-off before production</li>
         <li><strong>PII detection and redaction</strong>, lineage-tracked</li>
-        <li><strong>Leak-safe dataset splitting</strong></li>
+        <li><strong>Leak-safe dataset splitting</strong> and near-duplicate detection</li>
         <li><strong>Scheduled re-evaluation</strong> with regression alerts&nbsp;— the post-market monitoring duty</li>
         <li><strong>Base-model drift tracking</strong>, one-click retraining, head-to-head comparison</li>
         <li><strong>Staging-to-production promotion</strong> with rollback</li>
@@ -199,37 +437,10 @@
   </div>
 </section>
 
-<!-- ============================== 04 EVIDENCE ============================== -->
-<section class="section section-band" id="evidence">
+<!-- ============================== 06 ALTERNATIVES ============================== -->
+<section class="section section-band" id="compare">
   <div class="wrap">
-    <p class="kicker"><span>04</span>Evidence</p>
-    <h2>Validated end to end on representative regulated workloads.</h2>
-    <div class="cases">
-      <article class="case case-lead">
-        <p class="case-figure"><span>12%</span><span class="arrow" aria-hidden="true">→</span><span class="to">94%</span></p>
-        <h3>Customer-message triage for a retail bank</h3>
-        <p>Route an incoming customer message to one of 77 internal handling categories&nbsp;— a workload every retail bank runs, today manually or with brittle rules. On the public Banking77 benchmark (13,083 real banking queries, CC-BY-4.0), a 0.5-billion-parameter open model was customised on the platform with QLoRA. Accuracy on unseen messages rose from about 12% to about 94%, on hardware costing under €2,000.</p>
-        <p class="case-evidence">The audit trail, lineage record and Annex&nbsp;IV technical file for that model were produced by the same run, with no analyst effort.</p>
-      </article>
-      <article class="case">
-        <p class="case-figure small"><span class="to">138</span> <span class="unit">verified examples</span></p>
-        <h3>Natural-language querying of a proprietary database</h3>
-        <p>From 58 analytical queries mined from production logs&nbsp;— cleaned, scrubbed of personal data, and split so no query form appears in both training and test&nbsp;— the platform generated and verified a training set of 138 examples with a 12-example held-out set, end to end inside the perimeter. Every query executes successfully against a governed read-only snapshot.</p>
-      </article>
-      <article class="case">
-        <p class="case-figure small"><span class="to">0</span> <span class="unit">cloud labellers</span></p>
-        <h3>Training data without external dependency</h3>
-        <p>Training pairs are synthesised on the customer's own hardware by a locally hosted larger model, then filtered by round-trip execution: a generated question is turned back into a query, both are executed, and the pair is kept only if the results agree. Rejected pairs are retained as negatives for preference training.</p>
-      </article>
-    </div>
-    <p class="trl">Validated in a relevant environment&nbsp;— customer-class hardware, air-gapped, with separated roles, human sign-off before deployment and an immutable audit journal. <strong>All aspects of TRL&nbsp;5 are complete.</strong></p>
-  </div>
-</section>
-
-<!-- ============================== 05 ALTERNATIVES ============================== -->
-<section class="section" id="compare">
-  <div class="wrap">
-    <p class="kicker"><span>05</span>The alternatives</p>
+    <p class="kicker"><span>06</span>The alternatives</p>
     <h2>Three ways to build a governed AI system today.</h2>
     <div class="table-wrap">
       <table class="compare">
@@ -262,10 +473,10 @@
   </div>
 </section>
 
-<!-- ============================== 06 PROCUREMENT & COMPETITION ============================== -->
-<section class="section section-band" id="procurement">
+<!-- ============================== 07 PROCUREMENT & COMPETITION ============================== -->
+<section class="section" id="procurement">
   <div class="wrap">
-    <p class="kicker"><span>06</span>Built for procurement</p>
+    <p class="kicker"><span>07</span>Built for procurement</p>
     <h2>A vendor regulated procurement can say yes to.</h2>
     <div class="facts">
       <div class="fact">
@@ -312,10 +523,50 @@
   </div>
 </section>
 
-<!-- ============================== 07 PRICING ============================== -->
+<!-- ============================== 08 DESIGN PARTNERS ============================== -->
+<section class="section partners" id="partners">
+  <div class="wrap">
+    <p class="kicker"><span>08</span>Design partners</p>
+    <h2>Three design partners. One governed model each, inside your perimeter.</h2>
+    <p class="prose narrow section-lead">We are selecting design partners in finance, insurance, defence and government for validation deployments in their operational environments. First engagements are fixed-price and fixed-scope.</p>
+    <div class="offer">
+      <div class="offer-col">
+        <h3>What you get</h3>
+        <ul>
+          <li>One model for your use case, trained on your data on your hardware</li>
+          <li>Its complete conformity dossier: Annex&nbsp;IV file, Article&nbsp;27 assessment, audit journal, lineage</li>
+          <li>Sign-off, access roles and scheduled revalidation configured for your organisation</li>
+        </ul>
+      </div>
+      <div class="offer-col">
+        <h3>What we ask for</h3>
+        <ul>
+          <li>One use case and one accountable sponsor</li>
+          <li>A machine with a GPU inside your network</li>
+          <li>The people who will approve the model, available for sign-off</li>
+        </ul>
+      </div>
+      <div class="offer-col">
+        <h3>What never happens</h3>
+        <ul>
+          <li>No data leaves your network&nbsp;— not to us, not to a cloud</li>
+          <li>No telemetry: the licence is verified offline</li>
+          <li>No evidence held by us: the record lives inside your perimeter</li>
+        </ul>
+      </div>
+    </div>
+    <div class="offer-cta">
+      <a class="btn btn-accent" href="mailto:k.khrimpach@gmail.com?subject=Design%20partner%20programme">Apply as a design partner <span class="arr" aria-hidden="true">→</span></a>
+      <a class="btn btn-ghost" href="mailto:k.khrimpach@gmail.com?subject=Briefing%20request">Book a 30-minute briefing</a>
+      <p>Briefings for CISOs, compliance officers and procurement teams.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 09 PRICING ============================== -->
 <section class="section" id="pricing">
   <div class="wrap">
-    <p class="kicker"><span>07</span>Pricing</p>
+    <p class="kicker"><span>09</span>Pricing</p>
     <h2>Priced per governed AI system&nbsp;— not per GPU.</h2>
     <p class="prose narrow">A governed AI system is one solution promoted into production under governance: one entry in the register of AI systems the organisation must maintain. GPU count measures computation, which is commoditised; the number of governed systems measures regulatory exposure. Versions, retraining and redundant replicas are not counted.</p>
     <div class="tiers">
@@ -330,7 +581,7 @@
         </ul>
         <p class="tier-note">Train, serve and export — evaluation without friction. Conformity artefacts start at Pro.</p>
       </article>
-      <article class="tier">
+      <article class="tier tier-featured">
         <h3>Pro</h3>
         <p class="price">€24,000 <span>per year</span></p>
         <ul>
@@ -365,10 +616,63 @@
   </div>
 </section>
 
-<!-- ============================== 08 MARKET ============================== -->
-<section class="section section-band" id="market">
+<!-- ============================== 10 FAQ ============================== -->
+<section class="section section-band" id="faq">
   <div class="wrap">
-    <p class="kicker"><span>08</span>Market</p>
+    <p class="kicker"><span>10</span>Questions</p>
+    <h2>What security and compliance teams ask first.</h2>
+    <div class="faq">
+      <details>
+        <summary>Does any of our data leave the network?</summary>
+        <div class="answer">
+          <p>No. No outbound connection carries customer data, and there is no telemetry: the licence is a signed file verified offline against the machine it was issued for. The encoders that analyse your datasets ship as part of the installation rather than being fetched at run time.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Does using SPINALIS make us compliant with the AI Act?</summary>
+        <div class="answer">
+          <p>No tool can. The intended purpose, the risk assessment and the conformity decision remain yours. What SPINALIS does is enforce the controls&nbsp;— roles, sign-off, an append-only journal&nbsp;— and generate the evidence from what actually happened, so your people review a record instead of writing one.</p>
+        </div>
+      </details>
+      <details>
+        <summary>What exactly is in the Annex IV file?</summary>
+        <div class="answer">
+          <p>A Markdown and PDF document per solution, assembled from the build record: general description and intended purpose; development process and training configuration, including the training environment for reproducibility; data and data governance for every dataset used; accuracy and performance metrics; risk management; changes through the lifecycle from the audit journal; human oversight and sign-off; and the conformity context.</p>
+          <p>Fields no machine can know&nbsp;— intended purpose, known limitations, risks&nbsp;— are written by people in the product, and every edit is journalled.</p>
+        </div>
+      </details>
+      <details>
+        <summary>How do we know the reported numbers are honest?</summary>
+        <div class="answer">
+          <p>Evaluation runs on data held out from training, split by group so records from the same source stay on one side. Near-duplicates the grouping missed are detected before training. Reports show per-class results and the confusion matrix, not only an average. Builds pin their seed, dataset hash and environment, so anyone can re-run one and compare.</p>
+        </div>
+      </details>
+      <details>
+        <summary>What hardware do we need?</summary>
+        <div class="answer">
+          <p>One machine with a GPU inside your perimeter. Every demonstration on this page ran on a single 16&nbsp;GB desktop GPU. Installers exist for Windows, Linux and macOS on Apple Silicon; no cluster and no platform team are required.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Which models can we customise?</summary>
+        <div class="answer">
+          <p>Open-weight small language models for text tasks, vision transformers for image classification and detectors for finding objects in images, chosen from a curated catalogue. Trained models are served through an OpenAI-compatible endpoint or exported to open weight formats.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Is SPINALIS open source?</summary>
+        <div class="answer">
+          <p>No. It is proprietary software under an end-user licence governed by EU law, built on a permissive-only dependency stack with no copyleft components&nbsp;— which is what lets regulated procurement accept it. The Community tier is free for one governed system.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 11 MARKET ============================== -->
+<section class="section" id="market">
+  <div class="wrap">
+    <p class="kicker"><span>11</span>Market</p>
     <h2>Sized from the bottom up, on one verifiable segment.</h2>
     <ol class="funnel">
       <li><span class="f-num">4,633</span><span class="f-text">credit institutions in the European Union (European Central Bank, January 2026), joined by insurers supervised under Solvency&nbsp;II&nbsp;— about 6,000 in-scope financial institutions</span></li>
@@ -380,10 +684,10 @@
   </div>
 </section>
 
-<!-- ============================== 09 ROADMAP ============================== -->
-<section class="section" id="roadmap">
+<!-- ============================== 12 ROADMAP ============================== -->
+<section class="section section-band" id="roadmap">
   <div class="wrap">
-    <p class="kicker"><span>09</span>Plan</p>
+    <p class="kicker"><span>12</span>Plan</p>
     <h2>The next 24 months.</h2>
     <ol class="timeline">
       <li><span class="m">M6</span><span class="t">Three design-partner deployments across finance, insurance, defence and government</span></li>
@@ -398,10 +702,10 @@
   </div>
 </section>
 
-<!-- ============================== 10 TEAM ============================== -->
-<section class="section section-band" id="team">
+<!-- ============================== 13 TEAM ============================== -->
+<section class="section" id="team">
   <div class="wrap">
-    <p class="kicker"><span>10</span>Team</p>
+    <p class="kicker"><span>13</span>Team</p>
     <h2>Two founders, two capabilities.</h2>
     <p class="prose narrow team-lead">Building the technology&nbsp;— and selling it into regulated procurement. Clearly separated mandates; strategic decisions need both.</p>
     <div class="founders">
@@ -433,13 +737,16 @@
   <div class="wrap contact-grid">
     <div>
       <h2>Build a governed AI system inside your perimeter.</h2>
-      <p class="prose">We are selecting design partners in finance, insurance, defence and government for validation deployments in their operational environments.</p>
+      <p class="prose">Tell us the use case and the sector. We reply with what the first governed model and its dossier would look like in your environment.</p>
     </div>
     <div class="contact-card">
       <p class="small-head">Contact</p>
-      <!-- REPLACE_BEFORE_PUBLISHING: set the real address in both places below (see README.md). -->
-      <a class="contact-mail" href="mailto:CONTACT_EMAIL">CONTACT_EMAIL</a>
-      <p class="contact-note">Briefings for CISOs, compliance officers and procurement teams.</p>
+      <a class="contact-mail" href="mailto:k.khrimpach@gmail.com">Contact us</a>
+      <ul class="intents">
+        <li><a href="mailto:CONTACT_EMAIL?subject=Design%20partner%20programme">Apply as a design partner</a></li>
+        <li><a href="mailto:CONTACT_EMAIL?subject=Sample%20Annex%20IV%20technical%20file">Request the sample Annex&nbsp;IV file</a></li>
+        <li><a href="mailto:CONTACT_EMAIL?subject=Live%20walkthrough">Book a live walkthrough</a></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -448,8 +755,8 @@
 
 <footer class="site-footer">
   <div class="wrap footer-row">
-    <p><span class="mark mark-small" aria-hidden="true"></span> SPINALIS · Governed on-premise customisation of small language models</p>
-    <p class="footer-meta">EU trademark application for the SPINALIS mark in preparation · This site sets no cookies and makes no third-party requests · © 2026</p>
+    <p><span class="mark mark-small" aria-hidden="true"></span> SPINALIS · Governed on-premise customisation of AI models</p>
+    <p class="footer-meta">EU trademark application for the SPINALIS mark in preparation · Product screens captured from a running installation; patient images blurred · This site sets no cookies and makes no third-party requests · © 2026</p>
   </div>
 </footer>
 </body>
