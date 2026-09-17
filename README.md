@@ -1,17 +1,22 @@
-# SPINALIS — business-card site
+# SPINALIS — site
 
-A single static page for GitHub Pages: `index.html` + `assets/`. No build step, no JavaScript,
-no external fonts, no trackers — the page makes no third-party requests, which is the least a
-data-sovereignty product's site should do. Screens in `assets/screens/` are WebP captures of the
-running product (≈520 KB in total).
+Two static pages for GitHub Pages, no build step, no JavaScript, no external fonts, no trackers — the
+site makes no third-party requests, which is the least a data-sovereignty product's site should do.
+
+| Page | Audience | Contents |
+|---|---|---|
+| `index.html` | customers | range of results, fit check, frontier comparison, how it works, security answers, no lock-in, cost, pricing, FAQ |
+| `investors.html` | investors | the evidence gap, why now, proof, business model, market, competition and moat, plan, team |
+
+Screens in `assets/screens/` are WebP captures of the running product (≈280 KB). The fit check on
+`index.html` is computed in CSS with `:has()`; browsers without it show a static reading of the
+answers instead.
 
 ## Before publishing
 
-1. **Contact address.** `CONTACT_EMAIL` appears 11 times in `index.html` (header, calls to action,
-   contact block; several carry a pre-filled `?subject=`). Replace all of them at once:
-   `sed -i 's/CONTACT_EMAIL/hello@your-domain.eu/g' gitpages/index.html`
-2. **Social preview (optional).** `og:image` is relative; most link scrapers need an absolute URL —
-   set it once the domain is known.
+1. **Contact address.** `k.khrimpach@gmail.com` is used in every `mailto:` on both pages (several
+   carry a pre-filled `?subject=`). To change it: `sed -i 's/k\.khrimpach@gmail\.com/new@domain.eu/g' gitpages/*.html`
+2. **Social preview (optional).** `og:image` is relative; most link scrapers need an absolute URL.
 3. **Custom domain (optional).** Add a file named `CNAME` containing the domain, e.g. `spinalis.eu`.
 
 ## Preview locally
@@ -24,93 +29,107 @@ Use a server, not `file://`: the logo is a CSS mask, which browsers refuse to lo
 
 ## Publish
 
-**Recommended — a separate public repository.** The product repository is proprietary (trade
-secrets, licence enforcement). Publishing only this folder keeps it that way:
+**Recommended — a separate public repository.** The product repository is proprietary. Publishing
+only this folder keeps it that way:
 
 ```bash
-# once: create an empty public repo, e.g. github.com/<org>/spinalis-site
 git subtree push --prefix gitpages git@github.com:<org>/spinalis-site.git main
 # then: Settings → Pages → Deploy from a branch → main / (root)
 ```
 
-Repeat the `git subtree push` after every change (commit first).
-
-**Alternative — Pages from this repository.** GitHub Pages on a *private* repository needs a paid
-plan. Never make the product repository public to get free Pages. If the plan allows it, add
-`.github/workflows/pages.yml`:
-
-```yaml
-name: pages
-on: { push: { branches: [main], paths: ["gitpages/**"] } }
-permissions: { contents: read, pages: write, id-token: write }
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    environment: github-pages
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/upload-pages-artifact@v3
-        with: { path: gitpages }
-      - uses: actions/deploy-pages@v4
-```
+Never make the product repository public to get free Pages.
 
 ## Where every claim comes from
 
-The source of truth is **EIC Accelerator Part B v4** (`SPINALIS_EIC_PartB_v4.pdf`), not the Canva
-deck. Keep them in step: if Part B changes, change this page.
+Market, pricing, economics, competition, plan and team come from **EIC Accelerator Part B v4**. The
+results and the frontier comparison come from runs on the development machine on 15 September 2026.
 
-| Section | Part B |
-|---|---|
-| Evidence gap, Chapter III, Annex IV, Art. 27 | 1 — The problem |
-| Execution-grounded verification, cryptographic provenance, generated artefacts, profile packs | 1 — Novelty |
-| Three-option comparison, compliance and inference cost (with assumptions) | 1 — Why this is better |
-| Banking77 12% → 94%, NL-to-SQL 138/12, synthesis without egress, TRL 5 | 1 — Empirical demonstration, TRL |
-| Retinal photographs 91.7%, dental X-rays 80.7% | not in Part B — see below |
-| Proprietary licence, permissive-only stack | 1 — IP protection and strategy |
-| December 2027, 4,633 → €270M → €54M → €7–11M | 2 — Market opportunity and sizing |
-| Tiers per governed AI system | 2 — Business and revenue model |
-| Five competitor categories, sovereign-cloud risk | 2 — Competition and its limits |
-| M6–M24 milestones | 3 — Implementation plan |
-| Founders | 3 — Team capability |
+### Results (customer page)
 
-### Demonstrations run on the platform (not in Part B)
+Two rounds of runs: 15 September with the platform's defaults, 16–17 September after the improvements
+below. Local models decode greedily; GPT-5.5 (`gpt-5.5-2026-04-23`) ran zero-shot through the OpenAI
+API with default reasoning, and those numbers are reused (they cost $13.65 and have not changed).
 
-Numbers are copied from each build's own `evaluate/eval_results.json` on the development machine.
+| Task | Test set | Untrained | Trained on SPINALIS | GPT-5.5 |
+|---|---|---|---|---|
+| Banking77 intent triage | 1,540 messages, 20 per intent from the public test set | 1.5B 42.3% | **1.5B 90.3%** (90.0% on all 3,080) | 84.9% |
+| Text-to-SQL, coffee-roaster DB | 39 questions, 21 queries never in training | 1.5B 4/39 · 7B 12/39 | **1.5B 13/39 (exact 13)** · 7B 15/39 (exact 14) | 18/39, exact 9 |
+| DENTEX tooth-crop findings | 523 crops, 102 X-rays never in training | — | **ViT-86M 80.7%**, macro-F1 69.3% | 30.8%, macro-F1 31.6% |
+| Retinal photographs | 420 images, split by source image | — | **ViT-86M 91.7%**, ROC-AUC 0.989 | not run (licence unknown) |
 
-| Demo | Build | Held-out set | Result |
+Builds: banking `03c45554` (1.5B, 6 epochs, LoRA r=32, 41 min); SQL `36e78e4f` (1.5B, 150 pairs, r=32, 11 min, stopped early at the best checkpoint);
+dental `b4cd89a6`; fundus `8fea9937` (first, leaking split `a48ca215`: 93.3%). Superseded runs:
+banking `51e5d304` (0.5B 77.7%), `499ba6b6` (1.5B, 3 epochs, 83.4%); SQL `93bde1ca`, `8cec6aa8` (9/39, auto-HPO shrank the adapter to r=8), `c0c52521` (11/39, same data and rank but the last checkpoint, selected against a slice of its own training file), `117c07c6` (7B).
+
+**What moved banking from 83.4% to 90.3%** — six epochs instead of three (accuracy was still climbing
+at the end of epoch three) and LoRA r=32 instead of 16. Model selection used the 1,000-message
+validation split (82.3% → 88.6% there); the test half was scored once, at the end.
+
+**What did not work, and is worth knowing:** training on the intent alone, without the drafted reply,
+*lost* 12 points on validation (70.1% vs 82.3%) — the reply acts as a rationale and helps the model
+pick the label. The platform's `accuracy` scorer compares the whole reply string, so on this format it
+reads 0.03 and cannot be used to pick checkpoints; loss was used instead.
+
+**Text-to-SQL, second attempt.** The platform's own synthesis step (`reverse_gen` + round-trip filter)
+proposed 182 questions from the 31 *training* queries and kept 57 whose regenerated SQL reproduced the
+reference result on the snapshot — 93 authored + 57 synthesised = 150 training pairs. Checkpoints were
+selected by execution accuracy on 18 held-out *training* questions (never the test set), with the
+DuckDB executor pointed at the snapshot and the clock pinned. Result on the 39 test questions:
+**13/39** correct answers, all 13 exact. The ladder: 7/39 for the first 1.5B run, 9/39 with adaptive HPO
+on (it shrank the adapter to rank 8), 11/39 at rank 32 with the last checkpoint, 13/39 once checkpoint
+selection worked — same data, same rank; the difference is which checkpoint shipped. Both r=32 builds
+score 0.167 on the 18-question validation set, so the run quoted here is the one the corrected
+procedure produced, not the one that happened to score higher; the superseded number is above.
+A 1.5B model now reproduces the reference query exactly more often than GPT-5.5 (13 against 9) but
+still answers fewer questions correctly overall (13 against 18). The page says exactly that.
+
+**Platform changes these runs needed** (in the product, not in the benchmark scripts): a DuckDB result
+executor so execution scoring works against the analytics snapshot with a pinned clock; `eval` in the
+build request (metrics, executor, executor options); default epochs scaled by dataset size; and five
+bugs that made advertised features no-ops — eval-driven early stop crashed on import; the text
+generator dropped the system turn (so SQL was written without the schema); `reverse_gen` decoded
+greedily, so it could only ever propose one question per gold query; in-training evaluation used a
+random slice of the *training* file even when the build supplied a validation dataset, and ran once
+per 500 optimizer steps, so a short run had exactly one checkpoint to "select". The same weights scored
+0.80 on that slice of the training file and 0.17 on the uploaded validation set — which is what the
+slice was hiding.
+
+### Sizing (customer page)
+
+All runs on one workstation: RTX 4080 SUPER 16 GB, Core i9-13900K, 64 GB RAM, Ubuntu 22.04.
+Build times and GPU memory come from each build's record (`fine_tune/metrics.jsonl`, `gpu_mem_mb` peak).
+Serving was measured with the platform's own code (`ModelHolder` for text, the `/v1/classify` path for
+images), one request at a time as a deployment answers today, excluding network time:
+
+| Deployed model | Request | Median / p95 | Throughput |
 |---|---|---|---|
-| Retinal photographs, 4 classes (public Kaggle archive, licence unknown) | `8fea9937` | 420 images, split by source image (`group_pattern ^_?(\d+)_(?:left\|right\|\d+)$`) | accuracy 91.7%, macro-F1 91.3%, ROC-AUC 0.989 |
-| Same data, first split (patient number only) | `a48ca215` | 421 images | accuracy 93.3% — inflated by differently named copies of the same photograph |
-| Dental X-ray findings (DENTEX, CC BY-NC-SA 4.0) | `b4cd89a6` | 523 crops from 102 X-rays never in training | accuracy 80.7%, macro-F1 69.3%; identical confusion matrix to build `0874571b` |
+| Qwen2.5 1.5B (adapter `499ba6b6`; same size as the shipped `03c45554`), bf16, 6.0 GB | triage + drafted reply, ~68 tokens out | 0.88 s / 1.20 s | 1.1 req/s ≈ 3,960 / hour |
+| Qwen2.5-Coder 7B (build `117c07c6`), 4-bit, 8.9 GB | SQL, 1,246-token prompt, ~57 tokens out | 1.56 s / 2.62 s | 0.61 req/s ≈ 2,190 / hour |
+| ViT-Base 86M (build `8fea9937`), fp32, 0.3 GB | classify one photograph | 6 ms / 48 ms | 115 img/s ≈ 412,000 / hour |
 
-Near-duplicate check (DINOv2-small, cosine ≥ 0.98, held-out vs training): first fundus split 24
-images, corrected split 4 (none sharing a source number), dental 0.
+The 7B was loaded with `quantization="4bit"` explicitly: a real deployment's `"auto"` cannot size an
+adapter whose base model is a hub id (`_estimate_model_size_gb` looks for `config.json` in the adapter
+and downloads by the adapter path), so it loads bf16, offloads to CPU and fails. Fix before selling 7B serving.
 
-Patient images are blurred in every screen; DENTEX images are never shown (non-commercial licence).
-The text-to-SQL database is synthetic, modelled on a real coffee roaster; its query log was
-generated, so the page says "query log", never "production logs".
+Manual evidence cost is shown rounded as €12,000–40,000 per system per year (14–28 person-days at
+€900–1,400); with two systems Pro equals the lowest estimate, from three it is cheaper.
 
-Two facts come from outside Part B and were checked:
+### Security and lock-in answers (checked against the code)
 
-- **Unsloth Studio UI is AGPL-3.0** (core Unsloth: Apache-2.0) — https://unsloth.ai/docs/new/studio
-- CTO's prior platform (~400 data scientists, ~3,000 production models, financial services) — stated
-  by the founder.
+- Offline libraries: runtime `.spkg` packages via Settings → Libraries (`POST /runtimes/install-spkg`).
+- Offline models: copied into the model directory and registered by `POST /models/scan`.
+- Exports: weights, GGUF, Docker service, Python package, archive (`handlers_export.go`).
+- Lapsed licence: `Manager.GPUBudget()` returns 1 for an invalid licence; nothing else is gated.
+- **Not built in, and said so on the page:** native TLS, single sign-on, encryption at rest, HSM/KMS.
 
-## Deliberately not on this page
+## Deliberately not on these pages
 
-These were errors or contradictions in the earlier deck. Do not reintroduce them:
-
-- the US Executive Order on AI (revoked January 2025);
-- a "12–18 month window" before hyperscalers ship sovereign clouds (they have);
-- "open source" as a tier (the product is proprietary; that is the procurement moat);
-- the old name ModelForge;
-- loss-reduction and "6-second training" as proof of quality;
-- Loss / Perplexity / ROUGE / BLEU as selling points (the thesis is execution-grounded verification);
+- the US Executive Order on AI (revoked January 2025); a "12–18 month window" before sovereign clouds;
+- "open source" as a tier, the old name ModelForge;
+- loss-reduction, "6-second training", Loss / Perplexity / ROUGE / BLEU as selling points;
 - $149/node pricing, dollar prices, top-down TAM/SAM/SOM, 250 customers / $3M ARR, MRR targets;
-- unsourced statistics (CIO surveys, "stalled initiatives", inference bills, MLOps timelines);
-- "no co-founder needed" and an Enterprise AE hire (the COO covers that);
-- Together.ai / Predibase / Axolotl / Ludwig as the competitor set, and non-governance comparison axes;
+- unsourced statistics; "no co-founder needed"; the Together.ai / Predibase / Axolotl / Ludwig competitor set;
 - employer names from the founders' past, and regional labels that invite the wrong association;
-- "mined from production logs" for the SQL demo (the log is generated);
-- the first fundus split's 93.3% as a result (it leaked; the corrected split is the number);
-- training loss, learning rate or speed cards in screenshots, and the build's `-dirty` version string.
+- Banking77 "12% → 94%" (not reproducible), "mined from production logs" (the log is generated);
+- the leaking fundus split's 93.3% as a result; loss or speed cards and the `-dirty` version in screenshots;
+- any claim that the small model beats GPT-5.5 everywhere — on SQL it does not (18 vs 9 equivalent answers for a 1.5B, 15 for a 7B).
