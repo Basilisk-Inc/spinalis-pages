@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SPINALIS — Your own AI models, on your own hardware</title>
-<meta name="description" content="One platform to train small AI models you fully own — for text, SQL and images — on your own hardware, air-gapped, with the audit trail and EU AI Act documentation from the same run.">
+<meta name="description" content="One platform to train AI models you fully own, for any ML or AI task on your data, on your own hardware — air-gapped, with the audit trail and EU AI Act documentation from the same run.">
 <meta name="color-scheme" content="light dark">
 <meta property="og:type" content="website">
 <meta property="og:title" content="SPINALIS — Your own AI models, on your own hardware">
-<meta property="og:description" content="Text, SQL and vision models you own, trained on-premise with the platform’s own controls, compared with a frontier API on the same tasks.">
+<meta property="og:description" content="AI models you own, for any ML or AI task, trained on-premise — with three worked examples compared with a frontier API on the same tests.">
 <meta property="og:image" content="assets/og-image.png">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -44,8 +44,8 @@
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <p class="eyebrow">On-premise&nbsp;· Air-gapped&nbsp;· EU AI Act</p>
-      <h1>Your own AI models&nbsp;— for text, for SQL, for images.</h1>
-      <p class="lead">SPINALIS turns your data into small models you <em>fully own</em>. They run on your hardware, cost nothing per request, and can beat a frontier API on the job you train them for. The audit trail and EU AI Act documentation come from the same run.</p>
+      <h1>Your own AI models, for your own tasks.</h1>
+      <p class="lead">SPINALIS turns your data into models you <em>fully own</em>&nbsp;— for any machine-learning or AI task your teams repeat: language, documents, search over your data, images, speech, tables. They run on your hardware, cost nothing per request, and can beat a frontier API on the job you train them for. The audit trail and EU AI Act documentation come from the same run.</p>
       <div class="cta-row">
         <a class="btn btn-accent" href="#fit">Is this for you? Five questions <span class="arr" aria-hidden="true">→</span></a>
         <a class="btn btn-ghost" href="#results">See the results</a>
@@ -57,8 +57,8 @@
       </ul>
     </div>
 
-    <figure class="ladder" aria-label="Three kinds of problem, reproduced on the platform">
-      <figcaption class="ladder-head"><span>One platform, three levels</span><span>no custom code</span></figcaption>
+    <figure class="ladder" aria-label="Three example tasks, reproduced on the platform">
+      <figcaption class="ladder-head"><span>Three examples, one installation</span><span>no custom code</span></figcaption>
       <ol>
         <li>
           <span class="rung-kind">Text</span>
@@ -93,7 +93,7 @@
         <li><strong>Not customer statistics.</strong> Public or synthetic data, not a promise about yours.</li>
         <li><strong>No ML team involved.</strong> One desktop GPU, the platform&rsquo;s own controls, no custom code.</li>
         <li><strong>Scored on unseen examples.</strong> Same test for every contender, including GPT-5.5.</li>
-        <li><strong>The range is the point.</strong> One installation: text, reasoning over data, images.</li>
+        <li><strong>Examples, not limits.</strong> Three unrelated jobs on one installation; yours would be the next.</li>
       </ul>
     </div>
   </div>
@@ -132,7 +132,7 @@
 
       <div class="verdict-box" aria-live="polite">
         <p class="small-head">Your verdict</p>
-        <div class="v v-wait"><h3>Answer the questions.</h3><p>The first one matters most. The verdict appears here.</p></div>
+        <div class="v v-wait"><h3>Answer the questions.</h3><p>The first two decide the verdict; it appears here as you go.</p></div>
         <div class="v v-strong">
           <h3>You are exactly who SPINALIS is for.</h3>
           <p>Private data, decisions that must be explained, and evidence you would otherwise write by hand. That combination is what the platform was built around.</p>
@@ -142,6 +142,14 @@
           <h3>You would own the model instead of renting one.</h3>
           <p>Nothing leaves your network and there is no per-request bill. The evidence layer is already in place for the day regulation reaches your use case.</p>
           <a class="btn btn-accent" href="#results">See what it reproduces <span class="arr" aria-hidden="true">→</span></a>
+        </div>
+        <div class="v v-next-q2">
+          <h3>Your data may leave&nbsp;— so it comes down to cost.</h3>
+          <p>Answer question&nbsp;2: if you pay per request for the same task over and over, owning the model usually wins.</p>
+        </div>
+        <div class="v v-next-q1">
+          <h3>No per-request bill to save&nbsp;— so it comes down to your data.</h3>
+          <p>Answer question&nbsp;1: if any of it has to stay inside your network, that alone makes the case.</p>
         </div>
         <div class="v v-none">
           <h3>An API service is probably the simpler choice today.</h3>
@@ -157,14 +165,27 @@
 <!-- ============================== 02 RESULTS: RANGE ============================== -->
 <section class="section section-band" id="results">
   <div class="wrap">
-    <p class="kicker"><span>02</span>Results</p>
-    <h2>One platform, three kinds of problem.</h2>
-    <p class="prose narrow section-lead">Three problems, hardest last. Every model was trained on one desktop GPU with no custom code, and scored on examples it had never seen&nbsp;— next to the same model untrained, and to GPT-5.5 on the identical test.</p>
+    <p class="kicker"><span>02</span>What it does</p>
+    <h2>Any ML or AI task on your data. Three of them, measured.</h2>
+    <p class="prose narrow section-lead">One platform trains, checks and serves models across the whole range below. Three unrelated jobs were measured end to end&nbsp;— on one desktop GPU, with no custom code, next to GPT-5.5 on the identical test.</p>
+
+    <ul class="tasks">
+      <li class="measured"><p class="t-kind">Language</p><p class="t-jobs">Classify and route · extract fields · summarise and draft · assistants</p><a class="t-proof" href="#demo-text">Measured: example 1 ↓</a></li>
+      <li class="measured"><p class="t-kind">Answers over your data</p><p class="t-jobs">Questions to SQL · questions over documents · semantic search</p><a class="t-proof" href="#demo-sql">Measured: example 2 ↓</a></li>
+      <li class="measured"><p class="t-kind">Vision</p><p class="t-jobs">Image classification · object detection · segmentation · visual inspection</p><a class="t-proof" href="#demo-vision">Measured: example 3 ↓</a></li>
+      <li><p class="t-kind">Documents</p><p class="t-jobs">Invoices, forms, contracts: reading, field extraction, consistency checks</p></li>
+      <li><p class="t-kind">Speech and audio</p><p class="t-jobs">Transcription · call analytics · sound events</p></li>
+      <li><p class="t-kind">Tables and time series</p><p class="t-jobs">Risk scoring · forecasting · anomaly and fraud detection</p></li>
+      <li><p class="t-kind">Ranking and matching</p><p class="t-jobs">Prioritise cases · match records · recommend the next step</p></li>
+      <li class="yours"><p class="t-kind">Your task</p><p class="t-jobs">Anything you can show with examples: the data that comes in, the answer you expect out.</p><a class="t-proof" href="#contact">Tell us about it →</a></li>
+    </ul>
+
+    <h3 class="sub-h examples-h">Three examples, measured</h3>
 
     <div class="demos demos-3">
       <article class="demo" id="demo-text">
         <div class="demo-body">
-          <p class="demo-domain">Level 1 · Text · retail banking</p>
+          <p class="demo-domain">Example 1 · Text · retail banking</p>
           <h3>Understand and route customer messages</h3>
           <p>Route an incoming message to one of 77 handling categories&nbsp;— the triage every retail bank runs today by hand or with brittle rules.</p>
           <ul class="scoreline" title="Accuracy on 1,540 unseen messages">
@@ -189,7 +210,7 @@
 
       <article class="demo" id="demo-sql">
         <div class="demo-body">
-          <p class="demo-domain">Level 2 · Text + logic · analytics</p>
+          <p class="demo-domain">Example 2 · Text + logic · analytics</p>
           <h3>Turn business questions into SQL that runs</h3>
           <p>Ask in plain English; get a query over the point-of-sale and e-commerce database of a coffee roaster&nbsp;— joins, dates, aggregates and all.</p>
           <ul class="scoreline" title="Correct answers to 39 unseen questions">
@@ -244,7 +265,7 @@
 
       <article class="demo" id="demo-vision">
         <div class="demo-body">
-          <p class="demo-domain">Level 3 · Vision · medical imaging research</p>
+          <p class="demo-domain">Example 3 · Vision · medical imaging research</p>
           <h3>Classify retinal photographs and dental X-rays</h3>
           <p>Sort a fundus photograph into cataract, diabetic retinopathy, glaucoma or normal; label a tooth region on a panoramic X-ray as caries, deep caries, impacted tooth or periapical lesion.</p>
           <p class="small-head bars-head">Retinal photographs · 420 images of unseen patients</p>
@@ -346,31 +367,33 @@
     <p class="prose narrow section-lead">No cluster, no data-centre project: one desktop machine with one consumer GPU trained every model above and serves them at the rates below.</p>
 
     <dl class="specs">
-      <div><dt>GPU</dt><dd>NVIDIA GeForce RTX 4080 SUPER<small>one card · 16&nbsp;GB</small></dd></div>
-      <div><dt>CPU</dt><dd>Intel Core i9-13900K<small>24 cores</small></dd></div>
-      <div><dt>Memory</dt><dd>64&nbsp;GB RAM</dd></div>
-      <div><dt>System</dt><dd>Ubuntu 22.04 LTS</dd></div>
+      <div><dt>Graphics card</dt><dd><b>16&nbsp;GB</b>of GPU memory<small>one NVIDIA RTX 4080 SUPER</small></dd></div>
+      <div><dt>Processor</dt><dd><b>24 cores</b>one desktop CPU<small>Intel Core i9-13900K</small></dd></div>
+      <div><dt>Memory</dt><dd><b>64&nbsp;GB</b>of RAM</dd></div>
+      <div><dt>System</dt><dd><b>Ubuntu</b>22.04 LTS</dd></div>
     </dl>
 
-    <h3 class="sub-h">Training&nbsp;— measured</h3>
+    <h3 class="sub-h">Training&nbsp;— one model at a time</h3>
+    <p class="size-note"><strong>Each row is a separate build, run on its own.</strong> These are not models sharing the card at once; the bar shows how much of the 16&nbsp;GB one build needed at its peak.</p>
     <div class="table-wrap">
       <table class="vs size">
         <thead>
-          <tr><th scope="col">Model</th><th scope="col">Task and training data</th><th scope="col">Build time</th><th scope="col">GPU memory</th></tr>
+          <tr><th scope="col">Model</th><th scope="col">Task and training data</th><th scope="col">Time for one build</th><th scope="col">GPU memory used, of 16&nbsp;GB</th></tr>
         </thead>
         <tbody>
-          <tr><th scope="row">Qwen2.5 0.5B<small>QLoRA</small></th><td data-label="Task and data">Message triage · 9,003 messages</td><td class="num" data-label="Build time">17 min</td><td class="num" data-label="GPU memory">3.0 GB</td></tr>
-          <tr><th scope="row">Qwen2.5 1.5B<small>QLoRA</small></th><td data-label="Task and data">Message triage · 9,003 messages · 6 epochs</td><td class="num" data-label="Build time">41 min</td><td class="num" data-label="GPU memory">3.2 GB</td></tr>
-          <tr><th scope="row">Qwen2.5-Coder 1.5B<small>QLoRA</small></th><td data-label="Task and data">Text-to-SQL · 150 pairs · up to 15 epochs</td><td class="num" data-label="Build time">11 min</td><td class="num" data-label="GPU memory">10.9 GB</td></tr>
-          <tr><th scope="row">Qwen2.5-Coder 7B<small>QLoRA</small></th><td data-label="Task and data">Text-to-SQL · 111 pairs</td><td class="num" data-label="Build time">11 min</td><td class="num" data-label="GPU memory">8.1 GB</td></tr>
-          <tr><th scope="row">ViT-Base 86M<small>full fine-tune</small></th><td data-label="Task and data">Retinal photographs · 3,797 images</td><td class="num" data-label="Build time">2 min</td><td class="num" data-label="GPU memory">1.8 GB</td></tr>
-          <tr><th scope="row">ViT-Base 86M<small>full fine-tune</small></th><td data-label="Task and data">Dental X-ray findings · 3,006 crops</td><td class="num" data-label="Build time">1 min</td><td class="num" data-label="GPU memory">1.8 GB</td></tr>
+          <tr><th scope="row">Qwen2.5 0.5B<small>QLoRA</small></th><td data-label="Task and data">Message triage · 9,003 messages</td><td class="num" data-label="Time for one build">17 min</td><td class="num memcell" data-label="GPU memory"><span class="memv">3.0 GB</span><span class="mem" aria-hidden="true"><span class="m19"></span></span></td></tr>
+          <tr><th scope="row">Qwen2.5 1.5B<small>QLoRA</small></th><td data-label="Task and data">Message triage · 9,003 messages · 6 epochs</td><td class="num" data-label="Time for one build">41 min</td><td class="num memcell" data-label="GPU memory"><span class="memv">3.2 GB</span><span class="mem" aria-hidden="true"><span class="m20"></span></span></td></tr>
+          <tr><th scope="row">Qwen2.5-Coder 1.5B<small>QLoRA</small></th><td data-label="Task and data">Text-to-SQL · 150 pairs · up to 15 epochs</td><td class="num" data-label="Time for one build">11 min</td><td class="num memcell" data-label="GPU memory"><span class="memv">10.9 GB</span><span class="mem" aria-hidden="true"><span class="m68"></span></span></td></tr>
+          <tr><th scope="row">Qwen2.5-Coder 7B<small>QLoRA</small></th><td data-label="Task and data">Text-to-SQL · 111 pairs</td><td class="num" data-label="Time for one build">11 min</td><td class="num memcell" data-label="GPU memory"><span class="memv">8.1 GB</span><span class="mem" aria-hidden="true"><span class="m51"></span></span></td></tr>
+          <tr><th scope="row">ViT-Base 86M<small>full fine-tune</small></th><td data-label="Task and data">Retinal photographs · 3,797 images</td><td class="num" data-label="Time for one build">2 min</td><td class="num memcell" data-label="GPU memory"><span class="memv">1.8 GB</span><span class="mem" aria-hidden="true"><span class="m11"></span></span></td></tr>
+          <tr><th scope="row">ViT-Base 86M<small>full fine-tune</small></th><td data-label="Task and data">Dental X-ray findings · 3,006 crops</td><td class="num" data-label="Time for one build">1 min</td><td class="num memcell" data-label="GPU memory"><span class="memv">1.8 GB</span><span class="mem" aria-hidden="true"><span class="m11"></span></span></td></tr>
         </tbody>
       </table>
     </div>
-    <p class="method">Build time covers training and the evaluation on held-out data for the build named in the results above; GPU memory is the peak the build reported.</p>
+    <p class="method">Build time covers training and the evaluation on held-out data, for the builds named in the results above.</p>
 
-    <h3 class="sub-h">Serving&nbsp;— measured</h3>
+    <h3 class="sub-h">Serving&nbsp;— one model at a time</h3>
+    <p class="size-note">Each model deployed alone on the card; the rate is what that one model sustains.</p>
     <div class="table-wrap">
       <table class="vs size">
         <thead>
@@ -825,7 +848,7 @@
       <details>
         <summary>Which models can we train?</summary>
         <div class="answer">
-          <p>Open-weight small language models for text and SQL, vision transformers for image classification and detectors for finding objects in images, from a curated catalogue. Trained models are served through an OpenAI-compatible endpoint or exported.</p>
+          <p>Open-weight models across the range: language models for text, documents, search and SQL; vision models for classification, detection and segmentation; speech models for transcription; and models for tables and time series&nbsp;— from a curated catalogue you extend offline. Trained models are served through an OpenAI-compatible endpoint or exported.</p>
         </div>
       </details>
       <details>
@@ -848,7 +871,7 @@
     </div>
     <div class="contact-card">
       <p class="small-head">Contact</p>
-      <a class="contact-mail" href="mailto:k.khrimpach@gmail.com">k.khrimpach@gmail.com</a>
+      <a class="contact-mail" href="mailto:k.khrimpach@gmail.com">Send us an email <span aria-hidden="true">→</span></a>
       <ul class="intents">
         <li><a href="mailto:k.khrimpach@gmail.com?subject=First%20governed%20model">Discuss a first model</a></li>
         <li><a href="mailto:k.khrimpach@gmail.com?subject=Sample%20Annex%20IV%20technical%20file">Request the sample Annex&nbsp;IV file</a></li>

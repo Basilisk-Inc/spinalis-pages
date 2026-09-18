@@ -656,7 +656,12 @@ h3 { font-size: 20px; font-weight: 650; letter-spacing: -0.01em; }
 .v p { margin: 0 0 14px; font-size: 15px; color: color-mix(in srgb, var(--bg) 80%, var(--ink)); }
 .v .btn-accent { margin-top: 4px; }
 .v-wait { display: block; }
-.fit:has(input[name="q1"]:checked) .v-wait { display: none; }
+/* Every combination of answers to questions 1 and 2 shows exactly one verdict: the
+   waiting line goes as soon as either is answered, and a half-answered pair says which
+   question decides it rather than leaving the panel empty. */
+.fit:has(input[name="q1"]:checked) .v-wait, .fit:has(input[name="q2"]:checked) .v-wait { display: none; }
+.fit:has(#q1n:checked):not(:has(input[name="q2"]:checked)) .v-next-q2 { display: block; }
+.fit:has(#q2n:checked):not(:has(input[name="q1"]:checked)) .v-next-q1 { display: block; }
 /* good fit: data must stay, or the same task is paid per token */
 .fit:has(#q1y:checked) .v-good, .fit:has(#q2y:checked) .v-good { display: block; }
 /* strong fit: data must stay AND (decisions about people, or no evidence today) — overrides good */
@@ -1003,3 +1008,29 @@ details.means ul { padding: 0 16px 14px 34px; }
 .asks-foot { margin: 18px 0 0; max-width: 820px; font-size: 16px; color: var(--ink-2); }
 
 @media (max-width: 720px) { .vs.asks td { grid-template-columns: 38% 1fr; } }
+
+/* Sizing: the number first, the part name second. */
+.specs dd b { display: block; margin-bottom: 2px; font-size: 30px; font-weight: 740; letter-spacing: -0.03em; line-height: 1.1; color: var(--ink); }
+.specs dd { font-weight: 500; color: var(--ink-2); }
+.size-note { margin: -4px 0 14px; max-width: 820px; font-size: 15px; color: var(--ink-2); }
+.size-note strong { color: var(--ink); }
+/* Share of the 16 GB card one build used. */
+.memcell .memv { display: block; }
+.mem { display: block; margin-top: 6px; width: 100%; max-width: 140px; height: 6px; border-radius: 3px; background: var(--rule); overflow: hidden; }
+.vs.size td.memcell { text-align: left; }
+.mem > span { display: block; height: 100%; border-radius: 3px; background: var(--accent); }
+.mem .m11 { width: 11.3%; } .mem .m19 { width: 18.8%; } .mem .m20 { width: 20%; } .mem .m51 { width: 50.6%; } .mem .m68 { width: 68.1%; }
+
+/* The range of task families, before the three measured examples. */
+.tasks { list-style: none; margin: 34px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.tasks li { padding: 16px 18px; border-radius: 12px; background: var(--surface); border: 1px solid var(--rule); display: grid; gap: 6px; align-content: start; }
+.tasks .t-kind { margin: 0; font-size: 16.5px; font-weight: 680; color: var(--ink); }
+.tasks .t-jobs { margin: 0; font-size: 14px; line-height: 1.5; color: var(--ink-2); }
+.tasks .t-proof { margin-top: 4px; font-family: var(--mono); font-size: 12px; color: var(--accent); text-decoration: none; }
+.tasks .t-proof:hover { text-decoration: underline; }
+.tasks li.measured { border-color: var(--accent); }
+.tasks li.yours { background: var(--accent-soft); border-color: var(--accent); }
+.examples-h { margin: 46px 0 0; font-size: 20px; }
+.examples-h + .demos { margin-top: 18px; }
+@media (max-width: 1000px) { .tasks { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .tasks { grid-template-columns: 1fr; } }

@@ -5,12 +5,18 @@ site makes no third-party requests, which is the least a data-sovereignty produc
 
 | Page | Audience | Contents |
 |---|---|---|
-| `index.html` | customers | range of results, fit check, frontier comparison, how it works, security answers, no lock-in, cost, pricing, FAQ |
-| `investors.html` | investors | the evidence gap, why now, proof, business model, market, competition and moat, plan, team |
+| `index.html` | customers | the range of task families with three measured examples, fit check, frontier comparison, how it works, security answers, no lock-in, cost, pricing, FAQ |
+| `investors.html` | investors | proving how a model was made, why now, proof, business model, market, competition and moat, plan, team |
 
 Screens in `assets/screens/` are WebP captures of the running product (≈280 KB). The fit check on
 `index.html` is computed in CSS with `:has()`; browsers without it show a static reading of the
 answers instead.
+
+**Scope of the claims (decided 18 Sep 2026).** The pages present SPINALIS as covering every family of
+ML and AI task — language, answers over data, vision, documents, speech, tables and time series,
+ranking — ahead of what the product implements today, because new task types are being added now
+and the site should not change with each one. Only the three examples are *measured*; their tiles
+link to the evidence. Do not add numbers for a task family until a run backs them.
 
 ## Before publishing
 
